@@ -1,0 +1,6 @@
+<module>
+    <inherits name="elemental2.core.Core" />
+    <source path="server">
+        <include name="JavaImpl.java" />
+    </source>
+</module>
