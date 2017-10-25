@@ -107,13 +107,19 @@
       <plugin>
         <groupId>net.ltgt.gwt.maven</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
-        <version>1.0-rc-7</version>
+        <version>1.0-rc-9</version>
         <extensions>true</extensions>
         <configuration>
           <moduleName>org.gwtproject.typedarrays.TypedArrays</moduleName>
+          <!--
+          Because we expressly disable asserts in tests to avoid a compiler bug, we also must run surefire manually
+          on the JRE tests
+           -->
           <includes>
             <include>**/TypedArraysSuite.java</include>
           </includes>
+
+          <!-- disable JVM asserts, but enable JS asserts for tests -->
           <enableAssertions>false</enableAssertions>
           <testArgs>
             <testArg>-checkAssertions</testArg>
