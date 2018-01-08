@@ -3,4 +3,6 @@
     <source path="server">
         <include name="JavaImpl.java" />
     </source>
+    <source path="client"/>
+    <source path="shared"/>
 </module>
