@@ -15,6 +15,9 @@
  */
 package org.gwtproject.typedarrays.client;
 
+import elemental2.core.JsArray;
+import elemental2.core.JsNumber;
+import jsinterop.base.Js;
 import org.gwtproject.core.client.JsArrayNumber;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Float32Array;
@@ -26,9 +29,9 @@ import org.gwtproject.typedarrays.shared.TypedArrays;
  */
 public class GwtFloat32ArrayTest extends Float32ArrayTest {
 
-  private static native JsArrayNumber getJsoArray() /*-{
-    return [ 1, Number.NEGATIVE_INFINITY, Number.NaN, 3.4028235e+38 ];
-  }-*/;
+  private static JsArrayNumber getJsoArray() {
+    return Js.cast(JsArray.of(1.0, JsNumber.NEGATIVE_INFINITY, JsNumber.NaN, 3.4028235e+38));
+  };
 
   @Override
   public String getModuleName() {

@@ -15,6 +15,8 @@
  */
 package org.gwtproject.typedarrays.client;
 
+import elemental2.core.JsArray;
+import jsinterop.base.Js;
 import org.gwtproject.core.client.JsArrayInteger;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Int32Array;
@@ -26,9 +28,9 @@ import org.gwtproject.typedarrays.shared.TypedArrays;
  */
 public class GwtInt32ArrayTest extends Int32ArrayTest {
 
-  private static native JsArrayInteger getJsoArray() /*-{
-    return [ 1, 2, 65536, -1 ];
-  }-*/;
+  private static JsArrayInteger getJsoArray() {
+    return Js.cast(JsArray.of(1.0, 2.0, 65536.0, -1.0));
+  }
 
   @Override
   public String getModuleName() {

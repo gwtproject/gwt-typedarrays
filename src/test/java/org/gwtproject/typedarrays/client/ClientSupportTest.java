@@ -16,6 +16,9 @@
 package org.gwtproject.typedarrays.client;
 
 import com.google.gwt.junit.client.GWTTestCase;
+import elemental2.dom.DomGlobal;
+import jsinterop.base.Js;
+import jsinterop.base.JsPropertyMap;
 import org.gwtproject.typedarrays.shared.TypedArrays;
 
 /**
@@ -70,11 +73,11 @@ public class ClientSupportTest extends GWTTestCase {
         isSupported);
   }
 
-  private static native String getUserAgent() /*-{
-    return navigator.userAgent.toLowerCase();
-  }-*/;
+  private static String getUserAgent() {
+    return DomGlobal.navigator.userAgent.toLowerCase();
+  }
 
-  private static native int getIeDocumentMode() /*-{
-    return $doc.documentMode || 0;
-  }-*/;
+  private static int getIeDocumentMode() {
+    return Js.coerceToInt(Js.<JsPropertyMap<Double>>uncheckedCast(DomGlobal.document).get("documentMode"));
+  };
 }

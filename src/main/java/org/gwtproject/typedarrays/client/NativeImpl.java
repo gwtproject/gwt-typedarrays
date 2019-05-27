@@ -28,6 +28,10 @@ import org.gwtproject.typedarrays.shared.Uint32Array;
 import org.gwtproject.typedarrays.shared.Uint8Array;
 import org.gwtproject.typedarrays.shared.Uint8ClampedArray;
 
+import elemental2.dom.DomGlobal;
+import jsinterop.base.Js;
+import jsinterop.base.JsPropertyMap;
+
 /**
  * The default implementation class, which assumes that Typed Arrays might be
  * supported and does runtime checks where necessary, substituting emulated
@@ -342,7 +346,7 @@ public class NativeImpl extends TypedArrays.Impl {
   }
 
   @Override
-  protected native boolean runtimeSupportCheck() /*-{
-      return !!(window.ArrayBuffer);
-  }-*/;
+  protected boolean runtimeSupportCheck() {
+    return Js.<JsPropertyMap<Object>>uncheckedCast(DomGlobal.window).has("ArrayBuffer");
+  }
 }

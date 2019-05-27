@@ -161,6 +161,8 @@
           <enableAssertions>false</enableAssertions>
           <testArgs>
             <testArg>-checkAssertions</testArg>
+            <testArg>-runStyle</testArg>
+            <testArg>Manual:1</testArg>
           </testArgs>
         </configuration>
       </plugin>

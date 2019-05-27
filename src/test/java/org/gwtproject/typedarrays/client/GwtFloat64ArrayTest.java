@@ -15,6 +15,10 @@
  */
 package org.gwtproject.typedarrays.client;
 
+import elemental2.core.JsArray;
+import elemental2.core.JsNumber;
+import elemental2.dom.DomGlobal;
+import jsinterop.base.Js;
 import org.gwtproject.core.client.JsArrayNumber;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Float64Array;
@@ -70,12 +74,12 @@ public class GwtFloat64ArrayTest extends Float64ArrayTest {
     JsUtils.set(array, getJsoArray(), offset);
   }
 
-  private static native JsArrayNumber getJsoArray() /*-{
-    return [ 1, Number.NEGATIVE_INFINITY, Number.NaN, Number.MAX_VALUE ];
-  }-*/;
+  private static JsArrayNumber getJsoArray() {
+    return Js.cast(JsArray.of(1.0, JsNumber.NEGATIVE_INFINITY, JsNumber.NaN, JsNumber.MAX_VALUE));
+  }
 
-  private static native boolean isSafari() /*-{
-    var ua = navigator.userAgent.toLowerCase();
-    return ua.indexOf('safari/') != -1 && ua.indexOf('chrome/') == -1;
-  }-*/;
+  private static boolean isSafari() {
+    String  ua = DomGlobal.navigator.userAgent.toLowerCase();
+    return ua.indexOf("safari/") != -1 && ua.indexOf("chrome/") == -1;
+  }
 }
