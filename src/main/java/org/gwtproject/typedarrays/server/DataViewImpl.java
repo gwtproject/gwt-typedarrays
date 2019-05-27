@@ -15,12 +15,14 @@
  */
 package org.gwtproject.typedarrays.server;
 
+import org.gwtproject.core.shared.GwtIncompatible;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.DataView;
 
 /**
  * Pure Java implementation of {@link DataView}.
  */
+@GwtIncompatible
 public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   /**

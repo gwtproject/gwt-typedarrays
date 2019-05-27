@@ -15,8 +15,7 @@
  */
 package org.gwtproject.typedarrays.client;
 
-import com.google.gwt.core.client.JavaScriptObject;
-
+import org.gwtproject.core.client.JavaScriptObject;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Uint8ClampedArray;
 

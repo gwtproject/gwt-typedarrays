@@ -15,7 +15,7 @@
  */
 package org.gwtproject.typedarrays.client;
 
-import com.google.gwt.core.client.JsArrayNumber;
+import org.gwtproject.core.client.JsArrayNumber;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Float32Array;
 import org.gwtproject.typedarrays.shared.Float32ArrayTest;

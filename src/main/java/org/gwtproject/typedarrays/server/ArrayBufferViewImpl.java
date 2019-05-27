@@ -15,12 +15,14 @@
  */
 package org.gwtproject.typedarrays.server;
 
+import org.gwtproject.core.shared.GwtIncompatible;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.ArrayBufferView;
 
 /**
  * Base class for {@link ArrayBufferView} implementations.
  */
+@GwtIncompatible
 public abstract class ArrayBufferViewImpl implements ArrayBufferView {
 
   /**

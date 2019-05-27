@@ -15,12 +15,14 @@
  */
 package org.gwtproject.typedarrays.server;
 
+import org.gwtproject.core.shared.GwtIncompatible;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Float32Array;
 
 /**
  * Pure Java implementation of {@link Float32Array}.
  */
+@GwtIncompatible
 public final class Float32ArrayImpl extends ArrayBufferViewImpl implements Float32Array {
 
   /**

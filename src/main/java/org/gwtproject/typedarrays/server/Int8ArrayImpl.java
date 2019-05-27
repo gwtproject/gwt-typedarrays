@@ -15,12 +15,14 @@
  */
 package org.gwtproject.typedarrays.server;
 
+import org.gwtproject.core.shared.GwtIncompatible;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Int8Array;
 
 /**
  * Pure Java implementation of {@link Int8Array}.
  */
+@GwtIncompatible
 public final class Int8ArrayImpl extends ArrayBufferViewImpl implements Int8Array {
 
   /**

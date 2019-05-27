@@ -15,12 +15,14 @@
  */
 package org.gwtproject.typedarrays.server;
 
+import org.gwtproject.core.shared.GwtIncompatible;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Uint16Array;
 
 /**
  * Pure Java implementation of {@link Uint16Array}.
  */
+@GwtIncompatible
 public class Uint16ArrayImpl extends ArrayBufferViewImpl implements Uint16Array {
 
   /**

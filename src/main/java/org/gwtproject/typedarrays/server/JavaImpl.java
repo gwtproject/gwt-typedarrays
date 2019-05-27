@@ -15,6 +15,7 @@
  */
 package org.gwtproject.typedarrays.server;
 
+import org.gwtproject.core.shared.GwtIncompatible;
 import org.gwtproject.typedarrays.client.NativeImpl;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.DataView;
@@ -28,8 +29,6 @@ import org.gwtproject.typedarrays.shared.Uint16Array;
 import org.gwtproject.typedarrays.shared.Uint32Array;
 import org.gwtproject.typedarrays.shared.Uint8Array;
 import org.gwtproject.typedarrays.shared.Uint8ClampedArray;
-
-import javaemul.internal.annotations.GwtIncompatible;
 
 /**
  * Pure Java implementation class for typed arrays.

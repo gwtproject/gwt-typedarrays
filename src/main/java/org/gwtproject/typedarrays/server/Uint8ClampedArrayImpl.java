@@ -15,12 +15,14 @@
  */
 package org.gwtproject.typedarrays.server;
 
+import org.gwtproject.core.shared.GwtIncompatible;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Uint8ClampedArray;
 
 /**
  * Pure Java implementation of {@link Uint8ClampedArray}.
  */
+@GwtIncompatible
 public final class Uint8ClampedArrayImpl extends Uint8ArrayImpl implements Uint8ClampedArray {
 
   /**

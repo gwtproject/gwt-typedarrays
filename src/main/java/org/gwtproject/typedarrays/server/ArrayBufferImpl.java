@@ -15,6 +15,7 @@
  */
 package org.gwtproject.typedarrays.server;
 
+import org.gwtproject.core.shared.GwtIncompatible;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 
 import java.nio.ByteBuffer;
@@ -24,6 +25,7 @@ import java.nio.ByteOrder;
  * Pure Java implementation of {@link ArrayBuffer}, plus package-protected methods
  * for use by related implementation classes.
  */
+@GwtIncompatible
 public class ArrayBufferImpl implements ArrayBuffer {
 
   private final Object lock = new Object();
