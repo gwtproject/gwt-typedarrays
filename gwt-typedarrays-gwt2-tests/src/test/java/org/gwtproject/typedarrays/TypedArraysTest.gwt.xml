@@ -14,6 +14,7 @@
 
 <module>
   <inherits name="org.gwtproject.typedarrays.TypedArrays"/>
+
   <source path="client" />
   <source path="shared" />
  </module>

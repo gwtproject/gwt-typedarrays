@@ -1,9 +1,13 @@
 <module>
     <inherits name="elemental2.core.Core" />
     <inherits name="org.gwtproject.core.Core" />
+
+    <inherits name="jsinterop.base.Base"/>
+
     <source path="server">
         <include name="JavaImpl.java" />
     </source>
+
     <source path="client"/>
     <source path="shared"/>
 </module>
