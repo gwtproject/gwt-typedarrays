@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -17,11 +17,9 @@ package org.gwtproject.typedarrays.shared;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-/**
- * Test {@link Float64Array} implementations.
- */
+/** Test {@link Float64Array} implementations. */
 public class Float64ArrayTest extends GWTTestCase {
-  
+
   private static final int BYTES_PER_ELEMENT = Float64Array.BYTES_PER_ELEMENT;
 
   @Override
@@ -45,7 +43,7 @@ public class Float64ArrayTest extends GWTTestCase {
     assertEquals(0, array.byteOffset());
     int len = byteLen / BYTES_PER_ELEMENT;
     assertEquals(len, array.length());
-    
+
     // check that it is initialized to zeros
     for (int i = 0; i < len; ++i) {
       assertEquals(0.0, array.get(i));
@@ -64,10 +62,8 @@ public class Float64ArrayTest extends GWTTestCase {
       assertEquals("Byte " + i + ":3", 0, view.getUint8(i * BYTES_PER_ELEMENT + 3));
       assertEquals("Byte " + i + ":4", 0, view.getUint8(i * BYTES_PER_ELEMENT + 4));
       assertEquals("Byte " + i + ":5", 0, view.getUint8(i * BYTES_PER_ELEMENT + 5));
-      assertEquals("Byte " + i + ":6", (i & 15) << 4,
-          view.getUint8(i * BYTES_PER_ELEMENT + 6));
-      assertEquals("Byte " + i + ":7", 64 + (i >> 4),
-          view.getUint8(i * BYTES_PER_ELEMENT + 7));
+      assertEquals("Byte " + i + ":6", (i & 15) << 4, view.getUint8(i * BYTES_PER_ELEMENT + 6));
+      assertEquals("Byte " + i + ":7", 64 + (i >> 4), view.getUint8(i * BYTES_PER_ELEMENT + 7));
     }
 
     // modify the underlying buffer and read it back
@@ -99,7 +95,7 @@ public class Float64ArrayTest extends GWTTestCase {
 
   /**
    * Not all browsers support Float64Array despite otherwise supporting typed arrays.
-   * 
+   *
    * @return true if the current environment supports Float64Array
    */
   protected boolean isSupported() {
@@ -107,9 +103,10 @@ public class Float64ArrayTest extends GWTTestCase {
   }
 
   protected void setFromJavaArray(Float64Array array, int offset) {
-    double[] values = new double[] {
-        1.0, Double.NEGATIVE_INFINITY, Double.NaN, Double.MAX_VALUE,
-    };
+    double[] values =
+        new double[] {
+          1.0, Double.NEGATIVE_INFINITY, Double.NaN, Double.MAX_VALUE,
+        };
     array.set(values, offset);
   }
 

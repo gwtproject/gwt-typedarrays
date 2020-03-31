@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -30,9 +30,7 @@ import org.gwtproject.typedarrays.shared.Uint32Array;
 import org.gwtproject.typedarrays.shared.Uint8Array;
 import org.gwtproject.typedarrays.shared.Uint8ClampedArray;
 
-/**
- * Pure Java implementation class for typed arrays.
- */
+/** Pure Java implementation class for typed arrays. */
 public class JavaImpl extends NativeImpl {
 
   @GwtIncompatible
@@ -64,15 +62,17 @@ public class JavaImpl extends NativeImpl {
   @GwtIncompatible
   @Override
   public Float32Array createFloat32Array(ArrayBuffer buffer) {
-    return createFloat32Array(buffer, 0, getElementCount(buffer.byteLength(),
-            Float32Array.BYTES_PER_ELEMENT));
+    return createFloat32Array(
+        buffer, 0, getElementCount(buffer.byteLength(), Float32Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible
   @Override
   public Float32Array createFloat32Array(ArrayBuffer buffer, int byteOffset) {
-    return createFloat32Array(buffer, byteOffset, getElementCount(
-            buffer.byteLength() - byteOffset, Float32Array.BYTES_PER_ELEMENT));
+    return createFloat32Array(
+        buffer,
+        byteOffset,
+        getElementCount(buffer.byteLength() - byteOffset, Float32Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible
@@ -84,15 +84,17 @@ public class JavaImpl extends NativeImpl {
   @GwtIncompatible
   @Override
   public Float64Array createFloat64Array(ArrayBuffer buffer) {
-    return createFloat64Array(buffer, 0, getElementCount(buffer.byteLength(),
-            Float64Array.BYTES_PER_ELEMENT));
+    return createFloat64Array(
+        buffer, 0, getElementCount(buffer.byteLength(), Float64Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible
   @Override
   public Float64Array createFloat64Array(ArrayBuffer buffer, int byteOffset) {
-    return createFloat64Array(buffer, byteOffset, getElementCount(
-            buffer.byteLength() - byteOffset, Float64Array.BYTES_PER_ELEMENT));
+    return createFloat64Array(
+        buffer,
+        byteOffset,
+        getElementCount(buffer.byteLength() - byteOffset, Float64Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible
@@ -118,15 +120,17 @@ public class JavaImpl extends NativeImpl {
   @GwtIncompatible
   @Override
   public Int16Array createInt16Array(ArrayBuffer buffer) {
-    return createInt16Array(buffer, 0, getElementCount(buffer.byteLength(),
-            Int16Array.BYTES_PER_ELEMENT));
+    return createInt16Array(
+        buffer, 0, getElementCount(buffer.byteLength(), Int16Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible
   @Override
   public Int16Array createInt16Array(ArrayBuffer buffer, int byteOffset) {
-    return createInt16Array(buffer, byteOffset, getElementCount(
-            buffer.byteLength() - byteOffset, Int16Array.BYTES_PER_ELEMENT));
+    return createInt16Array(
+        buffer,
+        byteOffset,
+        getElementCount(buffer.byteLength() - byteOffset, Int16Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible
@@ -152,15 +156,17 @@ public class JavaImpl extends NativeImpl {
   @GwtIncompatible
   @Override
   public Int32Array createInt32Array(ArrayBuffer buffer) {
-    return createInt32Array(buffer, 0, getElementCount(buffer.byteLength(),
-            Int32Array.BYTES_PER_ELEMENT));
+    return createInt32Array(
+        buffer, 0, getElementCount(buffer.byteLength(), Int32Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible
   @Override
   public Int32Array createInt32Array(ArrayBuffer buffer, int byteOffset) {
-    return createInt32Array(buffer, byteOffset, getElementCount(
-            buffer.byteLength() - byteOffset, Int32Array.BYTES_PER_ELEMENT));
+    return createInt32Array(
+        buffer,
+        byteOffset,
+        getElementCount(buffer.byteLength() - byteOffset, Int32Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible
@@ -218,15 +224,17 @@ public class JavaImpl extends NativeImpl {
   @GwtIncompatible
   @Override
   public Uint16Array createUint16Array(ArrayBuffer buffer) {
-    return createUint16Array(buffer, 0, getElementCount(buffer.byteLength(),
-            Uint16Array.BYTES_PER_ELEMENT));
+    return createUint16Array(
+        buffer, 0, getElementCount(buffer.byteLength(), Uint16Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible
   @Override
   public Uint16Array createUint16Array(ArrayBuffer buffer, int byteOffset) {
-    return createUint16Array(buffer, byteOffset, getElementCount(
-            buffer.byteLength() - byteOffset, Uint16Array.BYTES_PER_ELEMENT));
+    return createUint16Array(
+        buffer,
+        byteOffset,
+        getElementCount(buffer.byteLength() - byteOffset, Uint16Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible
@@ -252,15 +260,17 @@ public class JavaImpl extends NativeImpl {
   @GwtIncompatible
   @Override
   public Uint32Array createUint32Array(ArrayBuffer buffer) {
-    return createUint32Array(buffer, 0, getElementCount(buffer.byteLength(),
-            Uint32Array.BYTES_PER_ELEMENT));
+    return createUint32Array(
+        buffer, 0, getElementCount(buffer.byteLength(), Uint32Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible
   @Override
   public Uint32Array createUint32Array(ArrayBuffer buffer, int byteOffset) {
-    return createUint32Array(buffer, byteOffset, getElementCount(
-            buffer.byteLength() - byteOffset, Uint32Array.BYTES_PER_ELEMENT));
+    return createUint32Array(
+        buffer,
+        byteOffset,
+        getElementCount(buffer.byteLength() - byteOffset, Uint32Array.BYTES_PER_ELEMENT));
   }
 
   @GwtIncompatible

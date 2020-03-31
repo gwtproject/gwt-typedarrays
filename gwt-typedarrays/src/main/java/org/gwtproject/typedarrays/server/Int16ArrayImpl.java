@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -19,9 +19,7 @@ import org.gwtproject.core.shared.GwtIncompatible;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Int16Array;
 
-/**
- * Pure Java implementation of {@link Int16Array}.
- */
+/** Pure Java implementation of {@link Int16Array}. */
 @GwtIncompatible
 public final class Int16ArrayImpl extends ArrayBufferViewImpl implements Int16Array {
 
@@ -46,8 +44,8 @@ public final class Int16ArrayImpl extends ArrayBufferViewImpl implements Int16Ar
 
   @Override
   public void set(int index, int value) {
-    arrayBuf.setInt16(checkRange(index, BYTES_PER_ELEMENT), (short) (value & 0xFFFF),
-        USE_LITTLE_ENDIAN);
+    arrayBuf.setInt16(
+        checkRange(index, BYTES_PER_ELEMENT), (short) (value & 0xFFFF), USE_LITTLE_ENDIAN);
   }
 
   @Override

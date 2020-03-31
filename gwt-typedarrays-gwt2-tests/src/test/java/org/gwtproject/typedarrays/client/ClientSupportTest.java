@@ -21,10 +21,7 @@ import jsinterop.base.Js;
 import jsinterop.base.JsPropertyMap;
 import org.gwtproject.typedarrays.shared.TypedArrays;
 
-/**
- * Test that client-side code has support on the user agents
- * where it is expected.
- */
+/** Test that client-side code has support on the user agents where it is expected. */
 public class ClientSupportTest extends GWTTestCase {
 
   @Override
@@ -40,8 +37,8 @@ public class ClientSupportTest extends GWTTestCase {
         assertFalse("IE9 and below do not support typed array", isSupported);
       } else {
         // TODO(dankurka) change this once we get type array support in for ie10
-        assertFalse("IE10 does support typed array, but GWT still uses old implementation",
-            isSupported);
+        assertFalse(
+            "IE10 does support typed array, but GWT still uses old implementation", isSupported);
       }
       return;
     }
@@ -69,8 +66,7 @@ public class ClientSupportTest extends GWTTestCase {
       return;
     }
 
-    assertFalse("Unknown browser (" + ua + ") assumed not to support typed arrays",
-        isSupported);
+    assertFalse("Unknown browser (" + ua + ") assumed not to support typed arrays", isSupported);
   }
 
   private static String getUserAgent() {
@@ -78,6 +74,7 @@ public class ClientSupportTest extends GWTTestCase {
   }
 
   private static int getIeDocumentMode() {
-    return Js.coerceToInt(Js.<JsPropertyMap<Double>>uncheckedCast(DomGlobal.document).get("documentMode"));
+    return Js.coerceToInt(
+        Js.<JsPropertyMap<Double>>uncheckedCast(DomGlobal.document).get("documentMode"));
   };
 }

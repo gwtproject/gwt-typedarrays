@@ -23,9 +23,7 @@ import org.gwtproject.typedarrays.shared.TypedArrays;
 import org.gwtproject.typedarrays.shared.Uint8ClampedArray;
 import org.gwtproject.typedarrays.shared.Uint8ClampedArrayTest;
 
-/**
- * Test client {@link Uint8ClampedArray} implementations.
- */
+/** Test client {@link Uint8ClampedArray} implementations. */
 public class GwtUint8ClampedArrayTest extends Uint8ClampedArrayTest {
 
   private static JsArrayInteger getJsoArray() {
@@ -37,9 +35,7 @@ public class GwtUint8ClampedArrayTest extends Uint8ClampedArrayTest {
     return "org.gwtproject.typedarrays.TypedArraysTest";
   }
 
-  /**
-   * Test creating from a JS array object.
-   */
+  /** Test creating from a JS array object. */
   public void testCreateJsArray() {
     if (!TypedArrays.isSupported()) {
       // TODO: some way of showing test as skipped in this case?
@@ -50,25 +46,23 @@ public class GwtUint8ClampedArrayTest extends Uint8ClampedArrayTest {
     validateArrayContents(array, 0);
   }
 
-//  /**
-//   * Test setting a native array from a non-native array.
-//   */
-//  public void testNonNativeSet() {
-//    if (!TypedArrays.isSupported()) {
-//      // TODO: some way of showing test as skipped in this case?
-//      return;
-//    }
-//    Uint8ClampedArray dest = TypedArrays.createUint8ClampedArray(6);
-//    Uint8ClampedArray src = Uint8ClampedArrayNativeEmul.create(new short[]{
-//            1, 2, 256, -1,
-//    });
-//    dest.set(src, 1);
-//    validateArrayContents(dest, 1);
-//  }
+  //  /**
+  //   * Test setting a native array from a non-native array.
+  //   */
+  //  public void testNonNativeSet() {
+  //    if (!TypedArrays.isSupported()) {
+  //      // TODO: some way of showing test as skipped in this case?
+  //      return;
+  //    }
+  //    Uint8ClampedArray dest = TypedArrays.createUint8ClampedArray(6);
+  //    Uint8ClampedArray src = Uint8ClampedArrayNativeEmul.create(new short[]{
+  //            1, 2, 256, -1,
+  //    });
+  //    dest.set(src, 1);
+  //    validateArrayContents(dest, 1);
+  //  }
 
-  /**
-   * Test setting from a JS array object.
-   */
+  /** Test setting from a JS array object. */
   public void testSetJsArray() {
     if (!TypedArrays.isSupported()) {
       // TODO: some way of showing test as skipped in this case?
@@ -85,9 +79,7 @@ public class GwtUint8ClampedArrayTest extends Uint8ClampedArrayTest {
     validateArrayContents(array, 1);
   }
 
-  /**
-   * Initialize from a JSO rather than a Java array
-   */
+  /** Initialize from a JSO rather than a Java array */
   protected void setFromJsArray(Uint8ClampedArray array, int offset) {
     JsUtils.set(array, getJsoArray(), offset);
   }

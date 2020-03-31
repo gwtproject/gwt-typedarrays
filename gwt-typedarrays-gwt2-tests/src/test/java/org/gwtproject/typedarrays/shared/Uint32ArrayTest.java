@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -17,24 +17,24 @@ package org.gwtproject.typedarrays.shared;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-/**
- * Test {@link Uint32Array} implementations.
- */
+/** Test {@link Uint32Array} implementations. */
 public class Uint32ArrayTest extends GWTTestCase {
-  
+
   private static final int BYTES_PER_ELEMENT = Uint32Array.BYTES_PER_ELEMENT;
 
   protected void setFromJavaLongArray(Uint32Array array, int offset) {
-    long[] values = new long[] {
-        1, 2, 65536, -1,
-    };
+    long[] values =
+        new long[] {
+          1, 2, 65536, -1,
+        };
     array.set(values, offset);
   }
 
   protected void setFromJavaDoubleArray(Uint32Array array, int offset) {
-    double[] values = new double[] {
-        1, 2, 65536, -1,
-    };
+    double[] values =
+        new double[] {
+          1, 2, 65536, -1,
+        };
     array.set(values, offset);
   }
 
@@ -66,7 +66,7 @@ public class Uint32ArrayTest extends GWTTestCase {
     assertEquals(0, array.byteOffset());
     int len = byteLen / BYTES_PER_ELEMENT;
     assertEquals(len, array.length());
-    
+
     // check that it is initialized to zeros
     for (int i = 0; i < len; ++i) {
       assertEquals(0, array.get(i));

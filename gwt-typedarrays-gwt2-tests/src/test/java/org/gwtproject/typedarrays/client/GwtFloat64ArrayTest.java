@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -25,9 +25,7 @@ import org.gwtproject.typedarrays.shared.Float64Array;
 import org.gwtproject.typedarrays.shared.Float64ArrayTest;
 import org.gwtproject.typedarrays.shared.TypedArrays;
 
-/**
- * Test client {@link Float64Array} implementations.
- */
+/** Test client {@link Float64Array} implementations. */
 public class GwtFloat64ArrayTest extends Float64ArrayTest {
 
   @Override
@@ -67,9 +65,7 @@ public class GwtFloat64ArrayTest extends Float64ArrayTest {
     return super.isSupported() && !isSafari();
   }
 
-  /**
-   * Initialize from a JSO rather than a Java array
-   */
+  /** Initialize from a JSO rather than a Java array */
   protected void setFromJsArray(Float64Array array, int offset) {
     JsUtils.set(array, getJsoArray(), offset);
   }
@@ -79,7 +75,7 @@ public class GwtFloat64ArrayTest extends Float64ArrayTest {
   }
 
   private static boolean isSafari() {
-    String  ua = DomGlobal.navigator.userAgent.toLowerCase();
+    String ua = DomGlobal.navigator.userAgent.toLowerCase();
     return ua.indexOf("safari/") != -1 && ua.indexOf("chrome/") == -1;
   }
 }

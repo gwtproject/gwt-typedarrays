@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -15,10 +15,8 @@
  */
 package org.gwtproject.typedarrays.shared;
 
-/**
- * A stream of heterogeneous values on top of a {@link DataViewStream}.
- */
-//CHECKSTYLE_OFF ignore missing javadoc on this unused/incomplete class
+/** A stream of heterogeneous values on top of a {@link DataViewStream}. */
+// CHECKSTYLE_OFF ignore missing javadoc on this unused/incomplete class
 public class DataViewStream {
   // TODO: add methods to pack/unpack strings in various formats
 
@@ -94,9 +92,7 @@ public class DataViewStream {
     return val;
   }
 
-  /**
-   * @return unsigned 32-bit int as a double
-   */
+  /** @return unsigned 32-bit int as a double */
   public double getUint32AsDouble() {
     return getUint32AsDouble(false);
   }
@@ -177,9 +173,7 @@ public class DataViewStream {
     offset += 4;
   }
 
-  /**
-   * @param value
-   */
+  /** @param value */
   public void putUint32FromDouble(double value) {
     putUint32FromDouble(value, false);
   }

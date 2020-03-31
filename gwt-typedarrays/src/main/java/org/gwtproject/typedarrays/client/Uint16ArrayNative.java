@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -15,17 +15,14 @@
  */
 package org.gwtproject.typedarrays.client;
 
-import org.gwtproject.typedarrays.shared.ArrayBuffer;
-import org.gwtproject.typedarrays.shared.Uint16Array;
-
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import org.gwtproject.typedarrays.shared.ArrayBuffer;
+import org.gwtproject.typedarrays.shared.Uint16Array;
 
-/**
- * JS native implementation of {@link Uint16Array}.
- */
+/** JS native implementation of {@link Uint16Array}. */
 @JsType(isNative = true, name = "Uint16Array", namespace = JsPackage.GLOBAL)
 public final class Uint16ArrayNative extends ArrayBufferViewNative implements Uint16Array {
 
@@ -42,8 +39,7 @@ public final class Uint16ArrayNative extends ArrayBufferViewNative implements Ui
    * @param buffer
    * @return a {@link Uint16Array} instance
    */
-  public Uint16ArrayNative(ArrayBuffer buffer) {
-  }
+  public Uint16ArrayNative(ArrayBuffer buffer) {}
 
   /**
    * @param buffer
@@ -60,8 +56,7 @@ public final class Uint16ArrayNative extends ArrayBufferViewNative implements Ui
    * @param byteOffset
    * @return a {@link Uint16Array} instance
    */
-  public Uint16ArrayNative(ArrayBuffer buffer, int byteOffset) {
-  }
+  public Uint16ArrayNative(ArrayBuffer buffer, int byteOffset) {}
 
   /**
    * @param buffer
@@ -70,8 +65,7 @@ public final class Uint16ArrayNative extends ArrayBufferViewNative implements Ui
    * @return a {@link Uint16Array} instance
    */
   @JsOverlay
-  public static Uint16ArrayNative create(ArrayBuffer buffer, int byteOffset,
-      int length) {
+  public static Uint16ArrayNative create(ArrayBuffer buffer, int byteOffset, int length) {
     return new Uint16ArrayNative(buffer, byteOffset, length);
   }
 
@@ -81,12 +75,9 @@ public final class Uint16ArrayNative extends ArrayBufferViewNative implements Ui
    * @param length
    * @return a {@link Uint16Array} instance
    */
-  public Uint16ArrayNative(ArrayBuffer buffer, int byteOffset,
-      int length) {
-  }
+  public Uint16ArrayNative(ArrayBuffer buffer, int byteOffset, int length) {}
 
   /**
-   *
    * @param array
    * @return a {@link Uint16Array} instance
    */
@@ -95,11 +86,8 @@ public final class Uint16ArrayNative extends ArrayBufferViewNative implements Ui
     return new Uint16ArrayNative(array);
   }
 
-  /**
-   * @param array
-   */
-  public Uint16ArrayNative(int[] array) {
-  }
+  /** @param array */
+  public Uint16ArrayNative(int[] array) {}
 
   /**
    * @param length
@@ -114,24 +102,23 @@ public final class Uint16ArrayNative extends ArrayBufferViewNative implements Ui
    * @param length
    * @return a {@link Uint16Array} instance
    */
-  public Uint16ArrayNative(int length) {
-  }
+  public Uint16ArrayNative(int length) {}
 
-//  @Override
-//  @JsOverlay
-//  public int get(int index) {
-//    return Js.<JsArrayLike<Double>>cast(this).getAt(index).intValue();
-//  }
+  //  @Override
+  //  @JsOverlay
+  //  public int get(int index) {
+  //    return Js.<JsArrayLike<Double>>cast(this).getAt(index).intValue();
+  //  }
 
   @Override
   @JsProperty(name = "length")
   public native int length();
 
-//  @Override
-//  @JsOverlay
-//  public void set(int index, int value) {
-//    Js.<JsArrayLike<Double>>cast(this).setAt(index, (double) value);
-//  }
+  //  @Override
+  //  @JsOverlay
+  //  public void set(int index, int value) {
+  //    Js.<JsArrayLike<Double>>cast(this).setAt(index, (double) value);
+  //  }
 
   @Override
   public native void set(int[] array);
@@ -150,5 +137,4 @@ public final class Uint16ArrayNative extends ArrayBufferViewNative implements Ui
 
   @Override
   public native Uint16Array subarray(int begin, int end);
-
 }

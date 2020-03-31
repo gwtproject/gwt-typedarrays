@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -24,9 +24,7 @@ import org.gwtproject.typedarrays.shared.Float32Array;
 import org.gwtproject.typedarrays.shared.Float32ArrayTest;
 import org.gwtproject.typedarrays.shared.TypedArrays;
 
-/**
- * Test client {@link Float32Array} implementations.
- */
+/** Test client {@link Float32Array} implementations. */
 public class GwtFloat32ArrayTest extends Float32ArrayTest {
 
   private static JsArrayNumber getJsoArray() {
@@ -64,9 +62,7 @@ public class GwtFloat32ArrayTest extends Float32ArrayTest {
     validateArrayContents(array, 1);
   }
 
-  /**
-   * Initialize from a JSO rather than a Java array
-   */
+  /** Initialize from a JSO rather than a Java array */
   protected void setFromJsArray(Float32Array array, int offset) {
     JsUtils.set(array, getJsoArray(), offset);
   }

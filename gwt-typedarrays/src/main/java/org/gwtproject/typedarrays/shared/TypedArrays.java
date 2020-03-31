@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -16,35 +16,34 @@
 package org.gwtproject.typedarrays.shared;
 
 /**
- * Factory class for various typed arrays.  Behavior of all other methods is
- * undefined if {@link #isSupported()} returns false.
- * <p>
- * In client code, the various types are implemented by JavaScriptObjects,
- * so you cannot reliable use instanceof checks on any of the returned
- * implementations.
+ * Factory class for various typed arrays. Behavior of all other methods is undefined if {@link
+ * #isSupported()} returns false.
+ *
+ * <p>In client code, the various types are implemented by JavaScriptObjects, so you cannot reliable
+ * use instanceof checks on any of the returned implementations.
  */
 public class TypedArrays {
 
   /**
    * Base class of implementations for creating various typed array structures.
-   * <p>
-   * <b>*** NOT A PUBLIC API ***</b>
+   *
+   * <p><b>*** NOT A PUBLIC API ***</b>
    */
   // CHECKSTYLE_OFF ignore missing javadoc
   public abstract static class Impl {
 
     /**
-     * Get the number of elements in a number of bytes, throwing an exception
-     * if it isn't an integral number.
-     * 
+     * Get the number of elements in a number of bytes, throwing an exception if it isn't an
+     * integral number.
+     *
      * @param byteLength
      * @param elemLength length of each element in bytes
      * @return count of elements
-     * @throws IllegalArgumentException if {@code byteLength} isn't an integral
-     *     multiple of {@code elemLength}
+     * @throws IllegalArgumentException if {@code byteLength} isn't an integral multiple of {@code
+     *     elemLength}
      */
     protected static int getElementCount(int byteLength, int elemLength) {
-      int count =  byteLength / elemLength;
+      int count = byteLength / elemLength;
       if (count * elemLength != byteLength) {
         throw new IllegalArgumentException();
       }
@@ -153,8 +152,8 @@ public class TypedArrays {
 
     public abstract Uint8ClampedArray createUint8ClampedArray(ArrayBuffer buffer, int byteOffset);
 
-    public abstract Uint8ClampedArray createUint8ClampedArray(ArrayBuffer buffer, int byteOffset,
-        int length);
+    public abstract Uint8ClampedArray createUint8ClampedArray(
+        ArrayBuffer buffer, int byteOffset, int length);
 
     public abstract Uint8ClampedArray createUint8ClampedArray(int length);
 
@@ -162,25 +161,22 @@ public class TypedArrays {
 
     /**
      * Check if the current environment might possibly support typed arrays.
-     * <p>
-     * The default implementation always returns true, and this is intended to
-     * be a static check based on deffered-bound parameters.
-     * 
-     * @return true if the current environment might possibly
-     *     support typed arrays
+     *
+     * <p>The default implementation always returns true, and this is intended to be a static check
+     * based on deffered-bound parameters.
+     *
+     * @return true if the current environment might possibly support typed arrays
      */
     protected boolean mightBeSupported() {
       return true;
     }
 
     /**
-     * Check if the current environment actually does support typed arrays
-     * (including emulation).  There is no partial support, so if true is
-     * returned, there must be acceptable implementations for all of the
-     * {@code createXXX} methods. 
-     * 
-     * @return true if the current environment actually does support typed
-     *     arrays
+     * Check if the current environment actually does support typed arrays (including emulation).
+     * There is no partial support, so if true is returned, there must be acceptable implementations
+     * for all of the {@code createXXX} methods.
+     *
+     * @return true if the current environment actually does support typed arrays
      */
     protected boolean runtimeSupportCheck() {
       return false;
@@ -188,17 +184,14 @@ public class TypedArrays {
   }
   // CHECKSTYLE_ON
 
-  /**
-   * This class exists to keep clinit calls from littering callsites when compiled
-   * to JS.
-   */
+  /** This class exists to keep clinit calls from littering callsites when compiled to JS. */
   private static class Instance {
     protected static final Impl impl = TypedArraysFactory.createImpl();
   }
 
   /**
    * Create a new {@link ArrayBuffer} of {@code length} bytes.
-   * 
+   *
    * @param length length of buffer in bytes
    * @return an {@link ArrayBuffer} instance
    */
@@ -208,7 +201,7 @@ public class TypedArrays {
 
   /**
    * Create a new {@link DataView} instance on an {@link ArrayBuffer}.
-   * 
+   *
    * @param buffer {@link ArrayBuffer}
    * @return {@link DataView} instance
    */
@@ -217,9 +210,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a new {@link DataView} instance on an {@link ArrayBuffer}, starting
-   * at an offset of {@code byteOffset}.
-   * 
+   * Create a new {@link DataView} instance on an {@link ArrayBuffer}, starting at an offset of
+   * {@code byteOffset}.
+   *
    * @param buffer {@link ArrayBuffer}
    * @param byteOffset offset into buffer
    * @return {@link DataView} instance
@@ -229,10 +222,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a new {@link DataView} instance on an {@link ArrayBuffer}, starting
-   * at an offset of {@code byteOffset} and continuing for {@code length}
-   * bytes.
-   * 
+   * Create a new {@link DataView} instance on an {@link ArrayBuffer}, starting at an offset of
+   * {@code byteOffset} and continuing for {@code length} bytes.
+   *
    * @param buffer {@link ArrayBuffer}
    * @param byteOffset offset into buffer
    * @param byteLength length of view in bytes
@@ -243,10 +235,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Float32Array} instance on {@code buffer}, starting at
-   * starting at the beginning of the buffer and continuing to the end (which
-   * must be an integral number of elements).
-   * 
+   * Create a {@link Float32Array} instance on {@code buffer}, starting at starting at the beginning
+   * of the buffer and continuing to the end (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @return an {@link Float32Array} instance
    */
@@ -255,10 +246,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Float32Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing to the end of the buffer
-   * (which must be an integral number of elements).
-   * 
+   * Create a {@link Float32Array} instance on {@code buffer}, starting at {@code byteOffset} into
+   * the buffer, continuing to the end of the buffer (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @return an {@link Float32Array} instance
@@ -268,10 +258,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Float32Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing for {@code length}
-   * elements.
-   * 
+   * Create a {@link Float32Array} instance on {@code buffer}, starting at {@code byteOffset} into
+   * the buffer, continuing for {@code length} elements.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @param length number of elements in the resulting array
@@ -282,9 +271,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Float32Array} instance of {@code length} elements, backed
-   * by a new {@link ArrayBuffer}.
-   * 
+   * Create a {@link Float32Array} instance of {@code length} elements, backed by a new {@link
+   * ArrayBuffer}.
+   *
    * @param length size of array
    * @return a {@link Float32Array} instance
    */
@@ -293,12 +282,11 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Float64Array} instance on {@code buffer}, starting at
-   * starting at the beginning of the buffer and continuing to the end (which
-   * must be an integral number of elements).
-   * <p>
-   * <b>Note that Safari does not currently support Float64 Arrays!</b>
-   * 
+   * Create a {@link Float64Array} instance on {@code buffer}, starting at starting at the beginning
+   * of the buffer and continuing to the end (which must be an integral number of elements).
+   *
+   * <p><b>Note that Safari does not currently support Float64 Arrays!</b>
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @return an {@link Float64Array} instance
    */
@@ -307,12 +295,11 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Float64Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing to the end of the buffer
-   * (which must be an integral number of elements).
-   * <p>
-   * <b>Note that Safari does not currently support Float64 Arrays!</b>
-   * 
+   * Create a {@link Float64Array} instance on {@code buffer}, starting at {@code byteOffset} into
+   * the buffer, continuing to the end of the buffer (which must be an integral number of elements).
+   *
+   * <p><b>Note that Safari does not currently support Float64 Arrays!</b>
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @return an {@link Float64Array} instance
@@ -322,12 +309,11 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Float64Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing for {@code length}
-   * elements.
-   * <p>
-   * <b>Note that Safari does not currently support Float64 Arrays!</b>
-   * 
+   * Create a {@link Float64Array} instance on {@code buffer}, starting at {@code byteOffset} into
+   * the buffer, continuing for {@code length} elements.
+   *
+   * <p><b>Note that Safari does not currently support Float64 Arrays!</b>
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @param length number of elements in the resulting array
@@ -338,11 +324,11 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Float64Array} instance of {@code length} elements, backed
-   * by a new {@link ArrayBuffer}.
-   * <p>
-   * <b>Note that Safari does not currently support Float64 Arrays!</b>
-   * 
+   * Create a {@link Float64Array} instance of {@code length} elements, backed by a new {@link
+   * ArrayBuffer}.
+   *
+   * <p><b>Note that Safari does not currently support Float64 Arrays!</b>
+   *
    * @param length size of array
    * @return a {@link Float64Array} instance
    */
@@ -351,10 +337,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int16Array} instance on {@code buffer}, starting at
-   * starting at the beginning of the buffer and continuing to the end (which
-   * must be an integral number of elements).
-   * 
+   * Create a {@link Int16Array} instance on {@code buffer}, starting at starting at the beginning
+   * of the buffer and continuing to the end (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @return an {@link Int16Array} instance
    */
@@ -363,10 +348,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int16Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing to the end of the buffer
-   * (which must be an integral number of elements).
-   * 
+   * Create a {@link Int16Array} instance on {@code buffer}, starting at {@code byteOffset} into the
+   * buffer, continuing to the end of the buffer (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @return an {@link Int16Array} instance
@@ -376,10 +360,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int16Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing for {@code length}
-   * elements.
-   * 
+   * Create a {@link Int16Array} instance on {@code buffer}, starting at {@code byteOffset} into the
+   * buffer, continuing for {@code length} elements.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @param length number of elements in the resulting array
@@ -390,9 +373,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int16Array} instance of {@code length} elements, backed
-   * by a new {@link ArrayBuffer}.
-   * 
+   * Create a {@link Int16Array} instance of {@code length} elements, backed by a new {@link
+   * ArrayBuffer}.
+   *
    * @param length size of array
    * @return a {@link Int16Array} instance
    */
@@ -401,10 +384,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int32Array} instance on {@code buffer}, starting at
-   * starting at the beginning of the buffer and continuing to the end (which
-   * must be an integral number of elements).
-   * 
+   * Create a {@link Int32Array} instance on {@code buffer}, starting at starting at the beginning
+   * of the buffer and continuing to the end (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @return an {@link Int32Array} instance
    */
@@ -413,10 +395,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int32Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing to the end of the buffer
-   * (which must be an integral number of elements).
-   * 
+   * Create a {@link Int32Array} instance on {@code buffer}, starting at {@code byteOffset} into the
+   * buffer, continuing to the end of the buffer (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @return an {@link Int32Array} instance
@@ -426,10 +407,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int32Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing for {@code length}
-   * elements.
-   * 
+   * Create a {@link Int32Array} instance on {@code buffer}, starting at {@code byteOffset} into the
+   * buffer, continuing for {@code length} elements.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @param length number of elements in the resulting array
@@ -440,9 +420,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int32Array} instance of {@code length} elements, backed
-   * by a new {@link ArrayBuffer}.
-   * 
+   * Create a {@link Int32Array} instance of {@code length} elements, backed by a new {@link
+   * ArrayBuffer}.
+   *
    * @param length size of array
    * @return a {@link Int32Array} instance
    */
@@ -451,9 +431,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int8Array} instance on {@code buffer}, starting at
-   * starting at the beginning of the buffer and continuing to the end.
-   * 
+   * Create a {@link Int8Array} instance on {@code buffer}, starting at starting at the beginning of
+   * the buffer and continuing to the end.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @return an {@link Int8Array} instance
    */
@@ -462,10 +442,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int8Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing to the end of the buffer
-   * (which must be an integral number of elements).
-   * 
+   * Create a {@link Int8Array} instance on {@code buffer}, starting at {@code byteOffset} into the
+   * buffer, continuing to the end of the buffer (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @return an {@link Int8Array} instance
@@ -475,10 +454,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int8Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing for {@code length}
-   * elements.
-   * 
+   * Create a {@link Int8Array} instance on {@code buffer}, starting at {@code byteOffset} into the
+   * buffer, continuing for {@code length} elements.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @param length number of elements in the resulting array
@@ -489,9 +467,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Int8Array} instance of {@code length} elements, backed
-   * by a new {@link ArrayBuffer}.
-   * 
+   * Create a {@link Int8Array} instance of {@code length} elements, backed by a new {@link
+   * ArrayBuffer}.
+   *
    * @param length size of array
    * @return a {@link Int8Array} instance
    */
@@ -500,10 +478,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint16Array} instance on {@code buffer}, starting at
-   * starting at the beginning of the buffer and continuing to the end (which
-   * must be an integral number of elements).
-   * 
+   * Create a {@link Uint16Array} instance on {@code buffer}, starting at starting at the beginning
+   * of the buffer and continuing to the end (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @return an {@link Uint16Array} instance
    */
@@ -512,10 +489,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint16Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing to the end of the buffer
-   * (which must be an integral number of elements).
-   * 
+   * Create a {@link Uint16Array} instance on {@code buffer}, starting at {@code byteOffset} into
+   * the buffer, continuing to the end of the buffer (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @return an {@link Uint16Array} instance
@@ -525,10 +501,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint16Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing for {@code length}
-   * elements.
-   * 
+   * Create a {@link Uint16Array} instance on {@code buffer}, starting at {@code byteOffset} into
+   * the buffer, continuing for {@code length} elements.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @param length number of elements in the resulting array
@@ -539,9 +514,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint16Array} instance of {@code length} elements, backed
-   * by a new {@link ArrayBuffer}.
-   * 
+   * Create a {@link Uint16Array} instance of {@code length} elements, backed by a new {@link
+   * ArrayBuffer}.
+   *
    * @param length size of array
    * @return a {@link Uint16Array} instance
    */
@@ -550,10 +525,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint32Array} instance on {@code buffer}, starting at
-   * starting at the beginning of the buffer and continuing to the end (which
-   * must be an integral number of elements).
-   * 
+   * Create a {@link Uint32Array} instance on {@code buffer}, starting at starting at the beginning
+   * of the buffer and continuing to the end (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @return an {@link Uint32Array} instance
    */
@@ -562,10 +536,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint32Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing to the end of the buffer
-   * (which must be an integral number of elements).
-   * 
+   * Create a {@link Uint32Array} instance on {@code buffer}, starting at {@code byteOffset} into
+   * the buffer, continuing to the end of the buffer (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @return an {@link Uint32Array} instance
@@ -575,10 +548,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint32Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing for {@code length}
-   * elements.
-   * 
+   * Create a {@link Uint32Array} instance on {@code buffer}, starting at {@code byteOffset} into
+   * the buffer, continuing for {@code length} elements.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @param length number of elements in the resulting array
@@ -589,9 +561,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint32Array} instance of {@code length} elements, backed
-   * by a new {@link ArrayBuffer}.
-   * 
+   * Create a {@link Uint32Array} instance of {@code length} elements, backed by a new {@link
+   * ArrayBuffer}.
+   *
    * @param length size of array
    * @return a {@link Uint32Array} instance
    */
@@ -600,10 +572,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint8Array} instance on {@code buffer}, starting at
-   * starting at the beginning of the buffer and continuing to the end (which
-   * must be an integral number of elements).
-   * 
+   * Create a {@link Uint8Array} instance on {@code buffer}, starting at starting at the beginning
+   * of the buffer and continuing to the end (which must be an integral number of elements).
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @return an {@link Uint8Array} instance
    */
@@ -612,9 +583,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint8Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing to the end of the buffer.
-   * 
+   * Create a {@link Uint8Array} instance on {@code buffer}, starting at {@code byteOffset} into the
+   * buffer, continuing to the end of the buffer.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @return an {@link Uint8Array} instance
@@ -624,10 +595,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint8Array} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing for {@code length}
-   * elements.
-   * 
+   * Create a {@link Uint8Array} instance on {@code buffer}, starting at {@code byteOffset} into the
+   * buffer, continuing for {@code length} elements.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @param length number of elements in the resulting array
@@ -638,9 +608,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint8Array} instance of {@code length} elements, backed
-   * by a new {@link ArrayBuffer}.
-   * 
+   * Create a {@link Uint8Array} instance of {@code length} elements, backed by a new {@link
+   * ArrayBuffer}.
+   *
    * @param length size of array
    * @return a {@link Uint8Array} instance
    */
@@ -649,9 +619,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint8ClampedArray} instance on {@code buffer}, starting at
-   * starting at the beginning of the buffer and continuing to the end.
-   * 
+   * Create a {@link Uint8ClampedArray} instance on {@code buffer}, starting at starting at the
+   * beginning of the buffer and continuing to the end.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @return an {@link Uint8ClampedArray} instance
    */
@@ -660,9 +630,9 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint8ClampedArray} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing to the end of the buffer.
-   * 
+   * Create a {@link Uint8ClampedArray} instance on {@code buffer}, starting at {@code byteOffset}
+   * into the buffer, continuing to the end of the buffer.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @return an {@link Uint8ClampedArray} instance
@@ -672,24 +642,23 @@ public class TypedArrays {
   }
 
   /**
-   * Create a {@link Uint8ClampedArray} instance on {@code buffer}, starting at
-   * {@code byteOffset} into the buffer, continuing for {@code length}
-   * elements.
-   * 
+   * Create a {@link Uint8ClampedArray} instance on {@code buffer}, starting at {@code byteOffset}
+   * into the buffer, continuing for {@code length} elements.
+   *
    * @param buffer underlying {@link ArrayBuffer}
    * @param byteOffset byte offset from the start of {@code buffer}
    * @param length number of elements in the resulting array
    * @return an {@link Uint8ClampedArray} instance
    */
-  public static Uint8ClampedArray createUint8ClampedArray(ArrayBuffer buffer,
-      int byteOffset, int length) {
+  public static Uint8ClampedArray createUint8ClampedArray(
+      ArrayBuffer buffer, int byteOffset, int length) {
     return Instance.impl.createUint8ClampedArray(buffer, byteOffset, length);
   }
 
   /**
-   * Create a {@link Uint8ClampedArray} instance of {@code length} elements, backed
-   * by a new {@link ArrayBuffer}.
-   * 
+   * Create a {@link Uint8ClampedArray} instance of {@code length} elements, backed by a new {@link
+   * ArrayBuffer}.
+   *
    * @param length size of array
    * @return a {@link Uint8ClampedArray} instance
    */
@@ -698,10 +667,10 @@ public class TypedArrays {
   }
 
   /**
-   * Check if the current environment supports typed arrays.  Behavior of the
-   * various {@code createXXX} methods is undefined if this method returns
-   * {@code false}, but will typically throw some exception.
-   * 
+   * Check if the current environment supports typed arrays. Behavior of the various {@code
+   * createXXX} methods is undefined if this method returns {@code false}, but will typically throw
+   * some exception.
+   *
    * @return true if typed arrays are support.
    */
   public static boolean isSupported() {

@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -15,17 +15,14 @@
  */
 package org.gwtproject.typedarrays.client;
 
-import org.gwtproject.typedarrays.shared.ArrayBuffer;
-import org.gwtproject.typedarrays.shared.Float32Array;
-
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import org.gwtproject.typedarrays.shared.ArrayBuffer;
+import org.gwtproject.typedarrays.shared.Float32Array;
 
-/**
- * JS native implementation of {@link Float32Array}.
- */
+/** JS native implementation of {@link Float32Array}. */
 @JsType(isNative = true, name = "Float32Array", namespace = JsPackage.GLOBAL)
 public final class Float32ArrayNative extends ArrayBufferViewNative implements Float32Array {
 
@@ -41,8 +38,7 @@ public final class Float32ArrayNative extends ArrayBufferViewNative implements F
    * @param buffer
    * @return a {@link Float32Array} instance
    */
-  public Float32ArrayNative(ArrayBuffer buffer) {
-  }
+  public Float32ArrayNative(ArrayBuffer buffer) {}
 
   /**
    * @param buffer
@@ -58,8 +54,7 @@ public final class Float32ArrayNative extends ArrayBufferViewNative implements F
    * @param byteOffset
    * @return a {@link Float32Array} instance
    */
-  public Float32ArrayNative(ArrayBuffer buffer, int byteOffset) {
-  }
+  public Float32ArrayNative(ArrayBuffer buffer, int byteOffset) {}
 
   /**
    * @param buffer
@@ -68,8 +63,7 @@ public final class Float32ArrayNative extends ArrayBufferViewNative implements F
    * @return a {@link Float32Array} instance
    */
   @JsOverlay
-  public static Float32ArrayNative create(ArrayBuffer buffer, int byteOffset,
-      int length) {
+  public static Float32ArrayNative create(ArrayBuffer buffer, int byteOffset, int length) {
     return new Float32ArrayNative(buffer, byteOffset, length);
   }
   /**
@@ -77,9 +71,7 @@ public final class Float32ArrayNative extends ArrayBufferViewNative implements F
    * @param byteOffset
    * @param length
    */
-  public Float32ArrayNative(ArrayBuffer buffer, int byteOffset,
-      int length) {
-  }
+  public Float32ArrayNative(ArrayBuffer buffer, int byteOffset, int length) {}
 
   /**
    * Create a {@link Float32ArrayNative} instance from an array.
@@ -97,8 +89,7 @@ public final class Float32ArrayNative extends ArrayBufferViewNative implements F
    *
    * @param array an array of initial values
    */
-  public Float32ArrayNative(float[] array) {
-  }
+  public Float32ArrayNative(float[] array) {}
 
   /**
    * @param length
@@ -108,17 +99,14 @@ public final class Float32ArrayNative extends ArrayBufferViewNative implements F
   public static Float32ArrayNative create(int length) {
     return new Float32ArrayNative(length);
   }
-  /**
-   * @param length
-   */
-  public Float32ArrayNative(int length) {
-  }
+  /** @param length */
+  public Float32ArrayNative(int length) {}
 
-//  @Override
-//  @JsOverlay
-//  public float get(int index) {
-//    return Js.<JsArrayLike<Double>>uncheckedCast(this).getAt(index).floatValue();
-//  }
+  //  @Override
+  //  @JsOverlay
+  //  public float get(int index) {
+  //    return Js.<JsArrayLike<Double>>uncheckedCast(this).getAt(index).floatValue();
+  //  }
 
   @Override
   @JsProperty(name = "length")
@@ -136,11 +124,11 @@ public final class Float32ArrayNative extends ArrayBufferViewNative implements F
   @Override
   public native void set(Float32Array array, int offset);
 
-//  @Override
-//  @JsOverlay
-//  public void set(int index, float value) {
-//    Js.<JsArrayLike<Double>>uncheckedCast(this).setAt(index, (double) value);
-//  }
+  //  @Override
+  //  @JsOverlay
+  //  public void set(int index, float value) {
+  //    Js.<JsArrayLike<Double>>uncheckedCast(this).setAt(index, (double) value);
+  //  }
 
   @Override
   public native Float32Array subarray(int begin);

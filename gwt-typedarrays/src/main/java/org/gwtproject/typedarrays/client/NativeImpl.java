@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -15,6 +15,9 @@
  */
 package org.gwtproject.typedarrays.client;
 
+import elemental2.dom.DomGlobal;
+import jsinterop.base.Js;
+import jsinterop.base.JsPropertyMap;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.DataView;
 import org.gwtproject.typedarrays.shared.Float32Array;
@@ -28,17 +31,12 @@ import org.gwtproject.typedarrays.shared.Uint32Array;
 import org.gwtproject.typedarrays.shared.Uint8Array;
 import org.gwtproject.typedarrays.shared.Uint8ClampedArray;
 
-import elemental2.dom.DomGlobal;
-import jsinterop.base.Js;
-import jsinterop.base.JsPropertyMap;
-
 /**
- * The default implementation class, which assumes that Typed Arrays might be
- * supported and does runtime checks where necessary, substituting emulated
- * implementations of DataView and Uint8ClampedArray where they are missing.
- * <p>
- * This can be replaced with a version which avoids runtime checks where
- * possible for efficiency.
+ * The default implementation class, which assumes that Typed Arrays might be supported and does
+ * runtime checks where necessary, substituting emulated implementations of DataView and
+ * Uint8ClampedArray where they are missing.
+ *
+ * <p>This can be replaced with a version which avoids runtime checks where possible for efficiency.
  */
 public class NativeImpl extends TypedArrays.Impl {
 
@@ -47,31 +45,30 @@ public class NativeImpl extends TypedArrays.Impl {
     return ArrayBufferNative.create(length);
   }
 
-//  @Override
-//  public DataView createDataView(ArrayBuffer buffer) {
-//    if (checkDataViewSupport()) {
-//      return DataViewNative.create(buffer);
-//    } else {
-//      return DataViewNativeEmul.create(buffer, 0, buffer.byteLength());
-//    }
-//  }
+  //  @Override
+  //  public DataView createDataView(ArrayBuffer buffer) {
+  //    if (checkDataViewSupport()) {
+  //      return DataViewNative.create(buffer);
+  //    } else {
+  //      return DataViewNativeEmul.create(buffer, 0, buffer.byteLength());
+  //    }
+  //  }
 
-//  @Override
-//  public DataView createDataView(ArrayBuffer buffer, int byteOffset) {
-//    if (checkDataViewSupport()) {
-//      return DataViewNative.create(buffer, byteOffset);
-//    } else {
-//      return DataViewNativeEmul.create(buffer, byteOffset, buffer.byteLength() - byteOffset);
-//    }
-//  }
+  //  @Override
+  //  public DataView createDataView(ArrayBuffer buffer, int byteOffset) {
+  //    if (checkDataViewSupport()) {
+  //      return DataViewNative.create(buffer, byteOffset);
+  //    } else {
+  //      return DataViewNativeEmul.create(buffer, byteOffset, buffer.byteLength() - byteOffset);
+  //    }
+  //  }
 
   @Override
-  public DataView createDataView(ArrayBuffer buffer, int byteOffset,
-      int byteLength) {
+  public DataView createDataView(ArrayBuffer buffer, int byteOffset, int byteLength) {
     if (checkDataViewSupport()) {
       return DataViewNative.create(buffer, byteOffset, byteLength);
     } else {
-      return null;//DataViewNativeEmul.create(buffer, byteOffset, byteLength);
+      return null; // DataViewNativeEmul.create(buffer, byteOffset, byteLength);
     }
   }
 
@@ -290,7 +287,7 @@ public class NativeImpl extends TypedArrays.Impl {
     if (checkUint8ClampedArraySupport()) {
       return Uint8ArrayNative.createClamped(buffer);
     } else {
-      return null;//Uint8ClampedArrayNativeEmul.create(buffer, 0, buffer.byteLength());
+      return null; // Uint8ClampedArrayNativeEmul.create(buffer, 0, buffer.byteLength());
     }
   }
 
@@ -306,8 +303,7 @@ public class NativeImpl extends TypedArrays.Impl {
   }
 
   @Override
-  public Uint8ClampedArray createUint8ClampedArray(ArrayBuffer buffer,
-      int byteOffset, int length) {
+  public Uint8ClampedArray createUint8ClampedArray(ArrayBuffer buffer, int byteOffset, int length) {
     if (checkUint8ClampedArraySupport()) {
       return Uint8ArrayNative.createClamped(buffer, byteOffset, length);
     } else {

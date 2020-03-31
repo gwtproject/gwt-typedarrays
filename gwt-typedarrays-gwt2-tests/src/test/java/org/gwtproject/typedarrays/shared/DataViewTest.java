@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -17,11 +17,7 @@ package org.gwtproject.typedarrays.shared;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-import java.nio.charset.StandardCharsets;
-
-/**
- * Test {@link DataView} implementations.
- */
+/** Test {@link DataView} implementations. */
 public class DataViewTest extends GWTTestCase {
 
   public void testBasic() {
@@ -36,7 +32,7 @@ public class DataViewTest extends GWTTestCase {
     assertSame(buf, view.buffer());
     assertEquals(len, view.byteLength());
     assertEquals(0, view.byteOffset());
-    
+
     // check that it is initialized to zeros
     for (int i = 0; i < len; ++i) {
       assertEquals(0, view.getUint8(i));
@@ -75,19 +71,20 @@ public class DataViewTest extends GWTTestCase {
     assertEquals(0x80042001, view.getInt32(0, true));
   }
 
-//  public void testFoo() {
-//    System.out.println((short)0x80);
-//    System.out.println((byte)((short)0x80));
-//
-//    byte[] bytes = {(byte) ((short) 0x01), (byte) ((short) 0x00), (byte) ((short) 0x80), (byte) ((short) 0x81)};
-//    System.out.println(new String(bytes, StandardCharsets.UTF_8));
-//
-//    String str = "\u0080 !\"|}~漢字\uD841\uDF0E";
-//    System.out.println(str.length());
-//    for (byte b : str.getBytes(StandardCharsets.UTF_8)) {
-//      System.out.println(String.format("0x%02X ", b));
-//    }
-//  }
+  //  public void testFoo() {
+  //    System.out.println((short)0x80);
+  //    System.out.println((byte)((short)0x80));
+  //
+  //    byte[] bytes = {(byte) ((short) 0x01), (byte) ((short) 0x00), (byte) ((short) 0x80), (byte)
+  // ((short) 0x81)};
+  //    System.out.println(new String(bytes, StandardCharsets.UTF_8));
+  //
+  //    String str = "\u0080 !\"|}~漢字\uD841\uDF0E";
+  //    System.out.println(str.length());
+  //    for (byte b : str.getBytes(StandardCharsets.UTF_8)) {
+  //      System.out.println(String.format("0x%02X ", b));
+  //    }
+  //  }
 
   @Override
   public String getModuleName() {

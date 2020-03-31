@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -19,16 +19,14 @@ import org.gwtproject.core.shared.GwtIncompatible;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.ArrayBufferView;
 
-/**
- * Base class for {@link ArrayBufferView} implementations.
- */
+/** Base class for {@link ArrayBufferView} implementations. */
 @GwtIncompatible
 public abstract class ArrayBufferViewImpl implements ArrayBufferView {
 
   /**
-   * The spec lets the platform's native endianness come through, so we choose to
-   * expose little-endian regardless -- if apps care about the endianness but don't
-   * test for it, it is likely they assume little-endian.
+   * The spec lets the platform's native endianness come through, so we choose to expose
+   * little-endian regardless -- if apps care about the endianness but don't test for it, it is
+   * likely they assume little-endian.
    */
   static final boolean USE_LITTLE_ENDIAN = true;
 
@@ -66,9 +64,9 @@ public abstract class ArrayBufferViewImpl implements ArrayBufferView {
   }
 
   /**
-   * Check the index range and throw an exception if out of range, if ok return the
-   * byte index of the specified element.
-   * 
+   * Check the index range and throw an exception if out of range, if ok return the byte index of
+   * the specified element.
+   *
    * @param index an element index
    * @param bytesPerElement
    * @return the byte index of the start of this element

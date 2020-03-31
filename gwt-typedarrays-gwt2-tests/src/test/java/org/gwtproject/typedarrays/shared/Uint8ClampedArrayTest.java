@@ -1,12 +1,12 @@
 /*
  * Copyright 2012 Google Inc.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
@@ -17,17 +17,16 @@ package org.gwtproject.typedarrays.shared;
 
 import com.google.gwt.junit.client.GWTTestCase;
 
-/**
- * Test {@link Uint8ClampedArray} implementations.
- */
+/** Test {@link Uint8ClampedArray} implementations. */
 public class Uint8ClampedArrayTest extends GWTTestCase {
-  
+
   private static final int BYTES_PER_ELEMENT = Uint8ClampedArray.BYTES_PER_ELEMENT;
 
   protected void setFromJavaIntArray(Uint8ClampedArray array, int offset) {
-    int[] values = new int[] {
-        1, 2, 256, -1,
-    };
+    int[] values =
+        new int[] {
+          1, 2, 256, -1,
+        };
     array.set(values, offset);
   }
 
@@ -59,7 +58,7 @@ public class Uint8ClampedArrayTest extends GWTTestCase {
     assertEquals(0, array.byteOffset());
     int len = byteLen / BYTES_PER_ELEMENT;
     assertEquals(len, array.length());
-    
+
     // check that it is initialized to zeros
     for (int i = 0; i < len; ++i) {
       assertEquals(0, array.get(i));

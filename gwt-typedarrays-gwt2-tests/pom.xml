@@ -112,7 +112,7 @@
         <version>${maven.gwt.plugin}</version>
         <extensions>true</extensions>
         <configuration>
-          <moduleName>org.gwtproject.typedarrays.TypedArrays</moduleName>
+          <moduleName>org.gwtproject.typedarrays.TypedArraysSuite</moduleName>
           <!--
           Because we expressly disable asserts in tests to avoid a compiler bug, we also must run surefire manually
           on the JRE tests
@@ -130,6 +130,7 @@
           </testArgs>
         </configuration>
       </plugin>
+
       <plugin>
         <groupId>com.mycila</groupId>
         <artifactId>license-maven-plugin</artifactId>
