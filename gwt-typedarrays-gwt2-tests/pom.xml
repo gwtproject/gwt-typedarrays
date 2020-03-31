@@ -20,9 +20,9 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 
-    <maven.failsafe.plugin>2.20.1</maven.failsafe.plugin>
+    <maven.failsafe.plugin>2.22.1</maven.failsafe.plugin>
     <maven.gwt.plugin>1.0.0</maven.gwt.plugin>
-    <maven.surfire.plugin>2.20.1</maven.surfire.plugin>
+    <maven.surfire.plugin>2.22.1</maven.surfire.plugin>
 
     <!-- CI -->
     <vertispan.j2cl.repo.url>https://repo.vertispan.com/j2cl/</vertispan.j2cl.repo.url>
