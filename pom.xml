@@ -10,7 +10,7 @@
 
     <packaging>pom</packaging>
 
-    <name>GWT typedarrays Parent</name>
+    <name>GWT Typed Arrays Parent</name>
     <description>Parent POM containing the gwt-typedarrays module and the test modules (gwt2- and j2cl-tests)</description>
     <url>https://github.com/gwtproject/gwt-typedarrays</url>
 
@@ -45,7 +45,7 @@
     <modules>
         <module>gwt-typedarrays</module>
         <module>gwt-typedarrays-gwt2-tests</module>
-<!--        <module>gwt-typedarrays-j2cl-tests</module>-->
+        <module>gwt-typedarrays-j2cl-tests</module>
     </modules>
 
     <properties>

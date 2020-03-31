@@ -11,7 +11,7 @@
   <artifactId>gwt-typedarrays-gwt2-tests</artifactId>
   <packaging>gwt-lib</packaging>
 
-  <name>GWT Editor GWT 2 Tests</name>
+  <name>GWT Types Arrays GWT 2 Tests</name>
   <description>Test cases for the GWT 2</description>
 
   <properties>
