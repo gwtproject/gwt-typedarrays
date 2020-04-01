@@ -21,6 +21,6 @@ on the parent directory.
 
 To run the j2cl tests:
 
-* switch to the 'gwt-core-j2cl-tests' directory
+* switch to the 'gwt-typedarrays-j2cl-tests' directory
 * run `mvn j2cl:clean` & `mvn j2cl:test`
 
