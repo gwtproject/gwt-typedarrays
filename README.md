@@ -13,7 +13,7 @@
 ```
 
 ### Instructions
-To build gwt-core:
+To build gwt-typedarrays:
 
 * run `mvn clean install`
 
