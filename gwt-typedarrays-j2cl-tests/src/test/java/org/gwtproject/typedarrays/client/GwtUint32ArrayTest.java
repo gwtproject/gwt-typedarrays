@@ -27,8 +27,7 @@ import org.junit.Test;
 
 /** Test client {@link Uint32Array} implementations. */
 @J2clTestInput(GwtUint32ArrayTest.class)
-public class GwtUint32ArrayTest
-    extends Uint32ArrayTest {
+public class GwtUint32ArrayTest extends Uint32ArrayTest {
 
   private static JsArrayNumber getJsoArray() {
     return Js.cast(JsArray.of(1.0, 2.0, 65536.0, -1.0));
@@ -44,7 +43,7 @@ public class GwtUint32ArrayTest
     Uint32Array array = JsUtils.createUint32Array(src);
     validateArrayContents(array, 0);
   }
-  
+
   @Test
   public void testSetJsArray() {
     if (!TypedArrays.isSupported()) {

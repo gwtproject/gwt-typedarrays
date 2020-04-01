@@ -15,10 +15,10 @@
  */
 package org.gwtproject.typedarrays.shared;
 
+import static org.junit.Assert.*;
+
 import com.google.j2cl.junit.apt.J2clTestInput;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /** Test {@link Float64Array} implementations. */
 @J2clTestInput(Float64ArrayTest.class)

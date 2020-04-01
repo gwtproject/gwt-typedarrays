@@ -15,10 +15,10 @@
  */
 package org.gwtproject.typedarrays.shared;
 
+import static org.junit.Assert.*;
+
 import com.google.j2cl.junit.apt.J2clTestInput;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /** Test {@link Float32Array} implementations. */
 @J2clTestInput(Float32ArrayTest.class)
@@ -68,7 +68,7 @@ public class Float32ArrayTest {
     assertEquals(-256f, array.get(0), 0);
     assertEquals(1.0f, array.get(1), 0);
   }
-  
+
   @Test
   public void testSetFromJavaArray() {
     if (!TypedArrays.isSupported()) {

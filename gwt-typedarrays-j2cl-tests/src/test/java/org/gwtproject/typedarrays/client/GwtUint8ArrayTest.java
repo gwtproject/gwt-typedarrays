@@ -43,7 +43,7 @@ public class GwtUint8ArrayTest extends Uint8ArrayTest {
     Uint8Array array = JsUtils.createUint8Array(src);
     validateArrayContents(array, 0);
   }
-  
+
   @Test
   public void testSetJsArray() {
     if (!TypedArrays.isSupported()) {

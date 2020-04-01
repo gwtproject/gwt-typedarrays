@@ -15,14 +15,14 @@
  */
 package org.gwtproject.typedarrays.client;
 
+import static org.junit.Assert.*;
+
 import com.google.j2cl.junit.apt.J2clTestInput;
 import elemental2.dom.DomGlobal;
 import jsinterop.base.Js;
 import jsinterop.base.JsPropertyMap;
 import org.gwtproject.typedarrays.shared.TypedArrays;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /** Test that client-side code has support on the user agents where it is expected. */
 @J2clTestInput(ClientSupportTest.class)

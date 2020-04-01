@@ -15,11 +15,11 @@
  */
 package org.gwtproject.typedarrays.shared;
 
-import com.google.j2cl.junit.apt.J2clTestInput;
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
+
+import com.google.j2cl.junit.apt.J2clTestInput;
+import org.junit.Test;
 
 /** Test {@link Uint32Array} implementations. */
 @J2clTestInput(Uint32ArrayTest.class)
@@ -42,7 +42,7 @@ public class Uint32ArrayTest {
         };
     array.set(values, offset);
   }
-  
+
   protected void validateArrayContents(Uint32Array array, int offset) {
     for (int i = 0; i < offset; ++i) {
       assertEquals("index " + i, 0, array.get(i), 0);
@@ -55,7 +55,7 @@ public class Uint32ArrayTest {
       assertEquals("index " + i, 0, array.get(i));
     }
   }
-  
+
   @Test
   public void testBasic() {
     if (!TypedArrays.isSupported()) {

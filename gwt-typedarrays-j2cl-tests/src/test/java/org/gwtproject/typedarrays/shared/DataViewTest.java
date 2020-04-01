@@ -15,11 +15,11 @@
  */
 package org.gwtproject.typedarrays.shared;
 
-import com.google.j2cl.junit.apt.J2clTestInput;
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
+
+import com.google.j2cl.junit.apt.J2clTestInput;
+import org.junit.Test;
 
 /** Test {@link DataView} implementations. */
 @J2clTestInput(DataViewTest.class)

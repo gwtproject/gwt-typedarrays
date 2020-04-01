@@ -15,13 +15,13 @@
  */
 package org.gwtproject.typedarrays.client;
 
+import static org.junit.Assert.assertEquals;
+
 import com.google.j2cl.junit.apt.J2clTestInput;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.TypedArrays;
 import org.gwtproject.typedarrays.shared.Uint8Array;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 /** Test converting to/from a string encoding of an array buffer. */
 @J2clTestInput(StringArrayBufferTest.class)
@@ -42,7 +42,7 @@ public class StringArrayBufferTest {
     assertEquals(128, view.get(2));
     assertEquals(129, view.get(3));
   }
-  
+
   @Test
   public void testToString() {
     if (!TypedArrays.isSupported()) {

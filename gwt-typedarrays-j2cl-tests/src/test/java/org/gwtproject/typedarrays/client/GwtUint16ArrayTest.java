@@ -43,7 +43,7 @@ public class GwtUint16ArrayTest extends Uint16ArrayTest {
     Uint16Array array = JsUtils.createUint16Array(src);
     validateArrayContents(array, 0);
   }
-  
+
   @Test
   public void testSetJsArray() {
     if (!TypedArrays.isSupported()) {

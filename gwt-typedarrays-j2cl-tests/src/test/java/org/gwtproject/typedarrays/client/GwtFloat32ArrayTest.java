@@ -44,7 +44,7 @@ public class GwtFloat32ArrayTest extends Float32ArrayTest {
     Float32Array array = JsUtils.createFloat32Array(src);
     validateArrayContents(array, 0);
   }
-  
+
   @Test
   public void testSetJsArray() {
     if (!TypedArrays.isSupported()) {

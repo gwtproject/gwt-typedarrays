@@ -20,6 +20,4 @@ import org.gwtproject.typedarrays.shared.DataViewTest;
 
 /** Test client {@link org.gwtproject.typedarrays.shared.DataView} implementations. */
 @J2clTestInput(GwtDataViewTest.class)
-public class GwtDataViewTest extends DataViewTest {
-
-}
+public class GwtDataViewTest extends DataViewTest {}

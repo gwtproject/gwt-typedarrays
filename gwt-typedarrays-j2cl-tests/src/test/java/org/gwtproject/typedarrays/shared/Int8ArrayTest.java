@@ -15,11 +15,11 @@
  */
 package org.gwtproject.typedarrays.shared;
 
-import com.google.j2cl.junit.apt.J2clTestInput;
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
+
+import com.google.j2cl.junit.apt.J2clTestInput;
+import org.junit.Test;
 
 /** Test {@link Int8Array} implementations. */
 @J2clTestInput(Int8ArrayTest.class)
@@ -86,7 +86,7 @@ public class Int8ArrayTest {
     assertEquals(0, array.get(0));
     assertEquals(-128, array.get(1));
   }
-  
+
   @Test
   public void testSetFromJavaArray() {
     if (!TypedArrays.isSupported()) {

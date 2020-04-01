@@ -43,7 +43,7 @@ public class GwtInt32ArrayTest extends Int32ArrayTest {
     Int32Array array = JsUtils.createInt32Array(src);
     validateArrayContents(array, 0);
   }
-  
+
   @Test
   public void testSetJsArray() {
     if (!TypedArrays.isSupported()) {

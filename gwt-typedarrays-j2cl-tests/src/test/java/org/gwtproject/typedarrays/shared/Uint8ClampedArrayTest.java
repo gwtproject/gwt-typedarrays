@@ -15,11 +15,11 @@
  */
 package org.gwtproject.typedarrays.shared;
 
-import com.google.j2cl.junit.apt.J2clTestInput;
-import org.junit.Test;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
+
+import com.google.j2cl.junit.apt.J2clTestInput;
+import org.junit.Test;
 
 /** Test {@link Uint8ClampedArray} implementations. */
 @J2clTestInput(Uint8ClampedArrayTest.class)
@@ -47,7 +47,7 @@ public class Uint8ClampedArrayTest {
       assertEquals("index " + i, 0, array.get(i));
     }
   }
-  
+
   @Test
   public void testBasic() {
     if (!TypedArrays.isSupported()) {
@@ -86,7 +86,7 @@ public class Uint8ClampedArrayTest {
     assertEquals(0, view.getInt8(0));
     assertEquals(-1, view.getInt8(1)); // 0xFF == -1 as a byte
   }
-  
+
   @Test
   public void testSetFromJavaArray() {
     if (!TypedArrays.isSupported()) {
