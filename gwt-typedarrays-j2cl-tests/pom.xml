@@ -97,13 +97,12 @@
                 <artifactId>j2cl-maven-plugin</artifactId>
                 <version>${maven.j2cl.plugin}</version>
                 <configuration>
-<!-- TODO: as long as ADVANCED compilationLevel will remove Assertions, we stay with BUNDLE -->
                     <compilationLevel>ADVANCED</compilationLevel>
-<!--                <compilationLevel>BUNDLE</compilationLevel>-->
                 </configuration>
                 <executions>
                     <execution>
                         <id>j2cl-test</id>
+                        <phase>test</phase>
                         <goals>
                             <goal>test</goal>
                         </goals>
