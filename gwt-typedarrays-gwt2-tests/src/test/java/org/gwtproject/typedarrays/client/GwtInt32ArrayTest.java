@@ -32,7 +32,7 @@ public class GwtInt32ArrayTest extends Int32ArrayTest {
 
   @Override
   public String getModuleName() {
-    return "org.gwtproject.typedarrays.TypedArraysTest";
+    return "org.gwtproject.typedarrays.TypedArrays";
   }
 
   public void testCreateJsArray() {

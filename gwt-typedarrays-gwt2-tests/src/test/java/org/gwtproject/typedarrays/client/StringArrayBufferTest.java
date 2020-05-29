@@ -25,7 +25,7 @@ public class StringArrayBufferTest extends GWTTestCase {
 
   @Override
   public String getModuleName() {
-    return "org.gwtproject.typedarrays.TypedArraysTest";
+    return "org.gwtproject.typedarrays.TypedArrays";
   }
 
   public void testFromString() {

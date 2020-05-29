@@ -33,7 +33,7 @@ public class GwtFloat32ArrayTest extends Float32ArrayTest {
 
   @Override
   public String getModuleName() {
-    return "org.gwtproject.typedarrays.TypedArraysTest";
+    return "org.gwtproject.typedarrays.TypedArrays";
   }
 
   public void testCreateJsArray() {

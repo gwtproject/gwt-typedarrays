@@ -26,7 +26,7 @@ public class ClientSupportTest extends GWTTestCase {
 
   @Override
   public String getModuleName() {
-    return "org.gwtproject.typedarrays.TypedArraysTest";
+    return "org.gwtproject.typedarrays.TypedArrays";
   }
 
   public void testSupported() {

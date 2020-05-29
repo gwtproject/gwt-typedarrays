@@ -32,7 +32,7 @@ public class GwtUint8ClampedArrayTest extends Uint8ClampedArrayTest {
 
   @Override
   public String getModuleName() {
-    return "org.gwtproject.typedarrays.TypedArraysTest";
+    return "org.gwtproject.typedarrays.TypedArrays";
   }
 
   /** Test creating from a JS array object. */

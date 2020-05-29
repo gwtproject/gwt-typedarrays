@@ -34,7 +34,7 @@ public class CompilerOptimizationTest {
             .getPath();
     path =
         path.split("test-classes")[0]
-            + "gwt-tests/www/org.gwtproject.typedarrays.TypedArraysTest.JUnit";
+            + "gwt-tests/www/org.gwtproject.typedarrays.TypedArrays.JUnit";
     Path root = Paths.get(path);
     // ...it's a test.  I wouldn't do this in production code.
     final DirectoryStream<Path> stream = Files.newDirectoryStream(root, s);

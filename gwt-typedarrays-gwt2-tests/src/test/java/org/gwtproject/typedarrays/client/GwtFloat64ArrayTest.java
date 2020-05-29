@@ -30,7 +30,7 @@ public class GwtFloat64ArrayTest extends Float64ArrayTest {
 
   @Override
   public String getModuleName() {
-    return "org.gwtproject.typedarrays.TypedArraysTest";
+    return "org.gwtproject.typedarrays.TypedArrays";
   }
 
   public void testCreateJsArray() {

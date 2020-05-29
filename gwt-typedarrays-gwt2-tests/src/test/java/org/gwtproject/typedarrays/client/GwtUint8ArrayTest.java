@@ -32,7 +32,7 @@ public class GwtUint8ArrayTest extends Uint8ArrayTest {
 
   @Override
   public String getModuleName() {
-    return "org.gwtproject.typedarrays.TypedArraysTest";
+    return "org.gwtproject.typedarrays.TypedArrays";
   }
 
   public void testCreateJsArray() {

@@ -178,9 +178,7 @@ public class TypedArrays {
      *
      * @return true if the current environment actually does support typed arrays
      */
-    protected boolean runtimeSupportCheck() {
-      return false;
-    }
+    protected abstract boolean runtimeSupportCheck();
   }
   // CHECKSTYLE_ON
 
