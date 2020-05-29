@@ -32,6 +32,13 @@
     <gwt-event.version>HEAD-SNAPSHOT</gwt-event.version>
     <gwt.version>2.9.0</gwt.version>
     <junit.version>4.12</junit.version>
+
+    <!--
+    Flag to disable gwt2 tests, so that CI can set this. At this time, the htmlunit build
+    that GWT2 uses cannot work with typed arrays at a level that we expect, so tests are
+    in manual mode. When GWT2 updates to a new htmlunit, this can probably be removed.
+    -->
+    <disable.gwt2.tests>false</disable.gwt2.tests>
   </properties>
 
   <dependencies>
@@ -128,6 +135,7 @@
             <testArg>-runStyle</testArg>
             <testArg>Manual:1</testArg>
           </testArgs>
+          <skipTests>${disable.gwt2.tests}</skipTests>
         </configuration>
       </plugin>
 
