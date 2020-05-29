@@ -24,7 +24,7 @@ import jsinterop.annotations.JsType;
  *
  * <p>{@link "http://www.khronos.org/registry/typedarray/specs/latest/#7"}
  */
-@JsType(isNative = true, name = "TypedArray", namespace = JsPackage.GLOBAL)
+@JsType(isNative = true, name = "Uint8ClampedArray", namespace = JsPackage.GLOBAL)
 public interface Uint8ClampedArray extends Uint8Array {
 
   /**

@@ -15,6 +15,7 @@
  */
 package org.gwtproject.typedarrays.client;
 
+import elemental2.core.JsArray;
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
@@ -66,35 +67,35 @@ public class JsUtils {
   }
 
   public static Float32ArrayNative createFloat32Array(JsArrayNumber array) {
-    return Js.uncheckedCast(new Float32ArrayN(array));
+    return Js.uncheckedCast(new Float32ArrayN(Js.<JsArray<Double>>uncheckedCast(array)));
   }
 
   public static Float64ArrayNative createFloat64Array(JsArrayNumber array) {
-    return Js.uncheckedCast(new Float64ArrayN(array));
+    return Js.uncheckedCast(new Float64ArrayN(Js.<JsArray<Double>>uncheckedCast(array)));
   }
 
   public static Int16ArrayNative createInt16Array(JsArrayInteger array) {
-    return Js.uncheckedCast(new Int16ArrayN(array));
+    return Js.uncheckedCast(new Int16ArrayN(Js.<JsArray<Double>>uncheckedCast(array)));
   }
 
   public static Int32ArrayNative createInt32Array(JsArrayInteger array) {
-    return Js.uncheckedCast(new Int32ArrayN(array));
+    return Js.uncheckedCast(new Int32ArrayN(Js.<JsArray<Double>>uncheckedCast(array)));
   }
 
   public static Int8ArrayNative createInt8Array(JsArrayInteger array) {
-    return Js.uncheckedCast(new Int8ArrayN(array));
+    return Js.uncheckedCast(new Int8ArrayN(Js.<JsArray<Double>>uncheckedCast(array)));
   }
 
   public static Uint16ArrayNative createUint16Array(JsArrayInteger array) {
-    return Js.uncheckedCast(new Uint16ArrayN(array));
+    return Js.uncheckedCast(new Uint16ArrayN(Js.<JsArray<Double>>uncheckedCast(array)));
   }
 
   public static Uint32ArrayNative createUint32Array(JsArrayNumber array) {
-    return Js.uncheckedCast(new Uint32ArrayN(array));
+    return Js.uncheckedCast(new Uint32ArrayN(Js.<JsArray<Double>>uncheckedCast(array)));
   }
 
   public static Uint8ArrayNative createUint8Array(JsArrayInteger array) {
-    return Js.uncheckedCast(new Uint8ArrayN(array));
+    return Js.uncheckedCast(new Uint8ArrayN(Js.<JsArray<Double>>uncheckedCast(array)));
   }
 
   //  public static Uint8ClampedArray createUint8ClampedArray(JsArrayInteger array) {
@@ -107,160 +108,154 @@ public class JsUtils {
 
   @JsType(isNative = true, name = "Float32Array", namespace = JsPackage.GLOBAL)
   private static class Float32ArrayN {
-    Float32ArrayN(JsArrayNumber array) {}
+    Float32ArrayN(JsArray<Double> array) {}
 
-    native void set(JsArrayNumber array);
+    native void set(JsArray<Double> array);
 
-    native void set(JsArrayNumber array, int offset);
+    native void set(JsArray<Double> array, int offset);
   }
 
   @JsType(isNative = true, name = "Float64Array", namespace = JsPackage.GLOBAL)
   private static class Float64ArrayN {
-    Float64ArrayN(JsArrayNumber array) {}
+    Float64ArrayN(JsArray<Double> array) {}
 
-    native void set(JsArrayNumber array);
+    native void set(JsArray<Double> array);
 
-    native void set(JsArrayNumber array, int offset);
+    native void set(JsArray<Double> array, int offset);
   }
 
   @JsType(isNative = true, name = "Int16Array", namespace = JsPackage.GLOBAL)
   private static class Int16ArrayN {
-    Int16ArrayN(JsArrayInteger array) {}
+    Int16ArrayN(JsArray<Double> array) {}
 
-    native void set(JsArrayInteger array);
+    native void set(JsArray<Double> array);
 
-    native void set(JsArrayInteger array, int offset);
+    native void set(JsArray<Double> array, int offset);
   }
 
   @JsType(isNative = true, name = "Int32Array", namespace = JsPackage.GLOBAL)
   private static class Int32ArrayN {
-    Int32ArrayN(JsArrayInteger array) {}
+    Int32ArrayN(JsArray<Double> array) {}
 
-    native void set(JsArrayInteger array);
+    native void set(JsArray<Double> array);
 
-    native void set(JsArrayInteger array, int offset);
+    native void set(JsArray<Double> array, int offset);
   }
 
   @JsType(isNative = true, name = "Int8Array", namespace = JsPackage.GLOBAL)
   private static class Int8ArrayN {
-    Int8ArrayN(JsArrayInteger array) {}
+    Int8ArrayN(JsArray<Double> array) {}
 
-    native void set(JsArrayInteger array);
+    native void set(JsArray<Double> array);
 
-    native void set(JsArrayInteger array, int offset);
+    native void set(JsArray<Double> array, int offset);
   }
 
   @JsType(isNative = true, name = "Uint16Array", namespace = JsPackage.GLOBAL)
   private static class Uint16ArrayN {
-    Uint16ArrayN(JsArrayInteger array) {}
+    Uint16ArrayN(JsArray<Double> array) {}
 
-    native void set(JsArrayInteger array);
+    native void set(JsArray<Double> array);
 
-    native void set(JsArrayInteger array, int offset);
+    native void set(JsArray<Double> array, int offset);
   }
 
   @JsType(isNative = true, name = "Uint32Array", namespace = JsPackage.GLOBAL)
   private static class Uint32ArrayN {
-    Uint32ArrayN(JsArrayNumber array) {}
+    Uint32ArrayN(JsArray<Double> array) {}
 
-    native void set(JsArrayNumber array);
+    native void set(JsArray<Double> array);
 
-    native void set(JsArrayNumber array, int offset);
+    native void set(JsArray<Double> array, int offset);
   }
 
   @JsType(isNative = true, name = "Uint8Array", namespace = JsPackage.GLOBAL)
   private static class Uint8ArrayN {
-    Uint8ArrayN(JsArrayInteger array) {}
+    Uint8ArrayN(JsArray<Double> array) {}
 
-    native void set(JsArrayInteger array);
+    native void set(JsArray<Double> array);
 
-    native void set(JsArrayInteger array, int offset);
+    native void set(JsArray<Double> array, int offset);
+  }
+  @JsType(isNative = true, name = "Uint8ClampedArray", namespace = JsPackage.GLOBAL)
+  private static class Uint8ClampedArrayN {
+    Uint8ClampedArrayN(JsArray<Double> array) {}
+
+    native void set(JsArray<Double> array);
+
+    native void set(JsArray<Double> array, int offset);
   }
 
   public static void set(Float32Array dest, JsArrayNumber array) {
-    ((Float32ArrayN) dest).set(array);
+    ((Float32ArrayN) dest).set(Js.<JsArray<Double>>uncheckedCast(array));
   }
 
   public static void set(Float32Array dest, JsArrayNumber array, int offset) {
-    Js.<Float32ArrayN>uncheckedCast(dest).set(array, offset);
+    Js.<Float32ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array), offset);
   }
 
   public static void set(Float64Array dest, JsArrayNumber array) {
-    Js.<Float64ArrayN>uncheckedCast(dest).set(array);
+    Js.<Float64ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array));
   }
 
   public static void set(Float64Array dest, JsArrayNumber array, int offset) {
-    Js.<Float64ArrayN>uncheckedCast(dest).set(array, offset);
+    Js.<Float64ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array), offset);
   }
 
   public static void set(Int16Array dest, JsArrayInteger array) {
-    Js.<Int16ArrayN>uncheckedCast(dest).set(array);
+    Js.<Int16ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array));
   }
 
   public static void set(Int16Array dest, JsArrayInteger array, int offset) {
-    Js.<Int16ArrayN>uncheckedCast(dest).set(array, offset);
+    Js.<Int16ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array), offset);
   }
 
   public static void set(Int32Array dest, JsArrayInteger array) {
-    Js.<Int32ArrayN>uncheckedCast(dest).set(array);
+    Js.<Int32ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array));
   }
 
   public static void set(Int32Array dest, JsArrayInteger array, int offset) {
-    Js.<Int32ArrayN>uncheckedCast(dest).set(array, offset);
+    Js.<Int32ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array), offset);
   }
 
   public static void set(Int8Array dest, JsArrayInteger array) {
-    Js.<Int8ArrayN>uncheckedCast(dest).set(array);
+    Js.<Int8ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array));
   }
 
   public static void set(Int8Array dest, JsArrayInteger array, int offset) {
-    Js.<Int8ArrayN>uncheckedCast(dest).set(array, offset);
+    Js.<Int8ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array), offset);
   }
 
   public static void set(Uint16Array dest, JsArrayInteger array) {
-    Js.<Uint16ArrayN>uncheckedCast(dest).set(array);
+    Js.<Uint16ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array));
   }
 
   public static void set(Uint16Array dest, JsArrayInteger array, int offset) {
-    Js.<Uint16ArrayN>uncheckedCast(dest).set(array, offset);
+    Js.<Uint16ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array), offset);
   }
 
   public static void set(Uint32Array dest, JsArrayNumber array) {
-    Js.<Uint32ArrayN>uncheckedCast(dest).set(array);
+    Js.<Uint32ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array));
   }
 
   public static void set(Uint32Array dest, JsArrayNumber array, int offset) {
-    Js.<Uint32ArrayN>uncheckedCast(dest).set(array, offset);
+    Js.<Uint32ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array), offset);
   }
 
   public static void set(Uint8Array dest, JsArrayInteger array) {
-    Js.<Uint8ArrayN>uncheckedCast(dest).set(array);
+    Js.<Uint8ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array));
   }
 
   public static void set(Uint8Array dest, JsArrayInteger array, int offset) {
-    Js.<Uint8ArrayN>uncheckedCast(dest).set(array, offset);
+    Js.<Uint8ArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array), offset);
   }
 
   public static void set(Uint8ClampedArray dest, JsArrayInteger array) {
-    if (hasClampedArray()) {
-      set((Uint8Array) dest, array, 0);
-    } else {
-      int len = array.length();
-      for (int i = 0; i < len; ++i) {
-        dest.set(i, array.get(i));
-      }
-    }
+    Js.<Uint8ClampedArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array), 0);
   }
 
   public static void set(Uint8ClampedArray dest, JsArrayInteger array, int offset) {
-    if (hasClampedArray()) {
-      set((Uint8Array) dest, array, offset);
-    } else {
-      int len = array.length();
-      for (int i = 0; i < len; ++i) {
-        dest.set(i + offset, array.get(i));
-      }
-    }
+    Js.<Uint8ClampedArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array), offset);
   }
 
   /**
@@ -286,12 +281,6 @@ public class JsUtils {
 
   @JsMethod(name = "String.fromCharCode.apply", namespace = JsPackage.GLOBAL)
   private static native String fromCharCode(Object nullThis, int[] bytes);
-
-  private static boolean hasClampedArray() {
-    //    // TODO(jat): this is awkward - should this be deferred bound?
-    //    return !!(.Uint8ClampedArray);
-    return true;
-  }
 
   private JsUtils() {}
 }

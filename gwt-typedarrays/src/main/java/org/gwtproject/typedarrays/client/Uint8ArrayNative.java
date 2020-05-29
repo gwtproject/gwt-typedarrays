@@ -15,10 +15,12 @@
  */
 package org.gwtproject.typedarrays.client;
 
+import elemental2.core.JsArray;
 import jsinterop.annotations.JsOverlay;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
+import jsinterop.base.Js;
 import org.gwtproject.core.client.JavaScriptObject;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Uint8Array;
@@ -150,7 +152,7 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
    */
   @JsOverlay
   public static Uint8ArrayNative create(JavaScriptObject array) {
-    return new Uint8ArrayNative(array);
+    return new Uint8ArrayNative(Js.<JsArray<Double>>uncheckedCast(array));
   }
 
   /**
@@ -159,7 +161,7 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
    * @param array a JS array or array-like object
    * @return a {@link Uint8Array} instance
    */
-  public Uint8ArrayNative(JavaScriptObject array) {}
+  public Uint8ArrayNative(JsArray<Double> array) {}
 
   /**
    * Create a {@link Uint8Array} instance from an array.
@@ -182,35 +184,32 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
 
   /**
    * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
-   * supports clamped arrays -- otherwise {@link Uint8ClampedArrayNativeEmul} should be used
-   * instead.
+   * supports clamped arrays.
    *
    * @param buffer
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
-  public static Uint8ArrayNative createClamped(ArrayBuffer buffer) {
+  public static Uint8ClampedArray createClamped(ArrayBuffer buffer) {
     return new Uint8ClampedArrayNative(buffer);
   }
 
   /**
    * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
-   * supports clamped arrays -- otherwise {@link Uint8ClampedArrayNativeEmul} should be used
-   * instead.
+   * supports clamped arrays.
    *
    * @param buffer
    * @param byteOffset
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
-  public static Uint8ArrayNative createClamped(ArrayBuffer buffer, int byteOffset) {
+  public static Uint8ClampedArray createClamped(ArrayBuffer buffer, int byteOffset) {
     return new Uint8ClampedArrayNative(buffer, byteOffset);
   }
 
   /**
    * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
-   * supports clamped arrays -- otherwise {@link Uint8ClampedArrayNativeEmul} should be used
-   * instead.
+   * supports clamped arrays.
    *
    * @param buffer
    * @param byteOffset
@@ -218,59 +217,55 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
-  public static Uint8ArrayNative createClamped(ArrayBuffer buffer, int byteOffset, int length) {
+  public static Uint8ClampedArray createClamped(ArrayBuffer buffer, int byteOffset, int length) {
     return new Uint8ClampedArrayNative(buffer, byteOffset, length);
   }
 
   /**
    * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
-   * supports clamped arrays -- otherwise {@link Uint8ClampedArrayNativeEmul} should be used
-   * instead.
+   * supports clamped arrays.
    *
    * @param length
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
-  public static Uint8ArrayNative createClamped(int length) {
+  public static Uint8ClampedArray createClamped(int length) {
     return new Uint8ClampedArrayNative(length);
   };
 
   /**
    * Create a {@link Uint8Array} instance from an array. Must only be called if the environment
-   * natively supports clamped arrays -- otherwise {@link Uint8ClampedArrayNativeEmul} should be
-   * used instead.
+   * natively supports clamped arrays.
    *
    * @param array an array of initial values
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
-  public static Uint8ArrayNative createClamped(int[] array) {
+  public static Uint8ClampedArray createClamped(int[] array) {
     return new Uint8ClampedArrayNative(array);
   }
 
   /**
    * Create a {@link Uint8ClampedArray} instance from a JavaScript array-like object. Must only be
-   * called if the environment natively supports clamped arrays -- otherwise {@link
-   * Uint8ClampedArrayNativeEmul} should be used instead.
+   * called if the environment natively supports clamped arrays.
    *
    * @param array a JS array or array-like object
    * @return a {@link Uint8ClampedArray} instance
    */
   @JsOverlay
-  public static Uint8ArrayNative createClamped(JavaScriptObject array) {
-    return new Uint8ClampedArrayNative(array);
+  public static Uint8ClampedArray createClamped(JavaScriptObject array) {
+    return new Uint8ClampedArrayNative(Js.<JsArray<Double>>uncheckedCast(array));
   }
 
   /**
    * Create a {@link Uint8Array} instance from an array. Must only be called if the environment
-   * natively supports clamped arrays -- otherwise {@link Uint8ClampedArrayNativeEmul} should be
-   * used instead.
+   * natively supports clamped arrays.
    *
    * @param array an array of initial values
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
-  public static Uint8ArrayNative createClamped(short[] array) {
+  public static Uint8ClampedArray createClamped(short[] array) {
     return new Uint8ClampedArrayNative(array);
   }
 

@@ -28,7 +28,7 @@ import jsinterop.base.JsArrayLike;
  *
  * <p>{@link "http://www.khronos.org/registry/typedarray/specs/latest/#7"}
  */
-@JsType(isNative = true, name = "Uint8Array", namespace = JsPackage.GLOBAL)
+@JsType(isNative = true, name = "ArrayBufferView", namespace = JsPackage.GLOBAL)
 public interface Uint8Array extends ArrayBufferView {
 
   @JsOverlay int BYTES_PER_ELEMENT = 1;

@@ -15,6 +15,7 @@
  */
 package org.gwtproject.typedarrays.client;
 
+import elemental2.core.JsArray;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
 import org.gwtproject.core.client.JavaScriptObject;
@@ -77,7 +78,7 @@ public class Uint8ClampedArrayNative extends Uint8ArrayNative implements Uint8Cl
    *
    * @param array a JS array or array-like object
    */
-  public Uint8ClampedArrayNative(JavaScriptObject array) {}
+  public Uint8ClampedArrayNative(JsArray<Double> array) {}
 
   /**
    * Create a {@link org.gwtproject.typedarrays.shared.Uint8Array} instance from an array. Must only
