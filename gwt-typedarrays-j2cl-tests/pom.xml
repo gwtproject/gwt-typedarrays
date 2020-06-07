@@ -10,7 +10,7 @@
     </parent>
     <artifactId>gwt-typedarrays-j2cl-tests</artifactId>
 
-    <name>GWT Typed Arrays - J2CL Tests</name>
+    <name>GWT TypedArrays - J2CL Tests</name>
     <description>Test cases for the J2Cl tests</description>
     <url>https://github.com/gwtproject/gwt-typedarrays</url>
 
@@ -48,14 +48,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <maven.compiler.plugin>3.7.0</maven.compiler.plugin>
-        <maven.deploy.plugin>3.0.0-M1</maven.deploy.plugin>
-        <maven.findbugs.plugin>3.0.5</maven.findbugs.plugin>
-        <maven.install.plugin>3.0.0-M1</maven.install.plugin>
-        <maven.jar.plugin>3.1.2</maven.jar.plugin>
         <maven.j2cl.plugin>0.15-SNAPSHOT</maven.j2cl.plugin>
-        <maven.licence.plugin>3.0</maven.licence.plugin>
-        <maven.surfire.plugin>3.0.0-M1</maven.surfire.plugin>
 
         <!-- CI -->
         <vertispan.j2cl.repo.url>https://repo.vertispan.com/j2cl/</vertispan.j2cl.repo.url>
@@ -97,9 +90,7 @@
                 <artifactId>j2cl-maven-plugin</artifactId>
                 <version>${maven.j2cl.plugin}</version>
                 <configuration>
-<!-- TODO: as long as ADVANCED compilationLevel will remove Assertions, we stay with BUNDLE -->
                     <compilationLevel>ADVANCED</compilationLevel>
-<!--                <compilationLevel>BUNDLE</compilationLevel>-->
                 </configuration>
                 <executions>
                     <execution>
@@ -117,6 +108,22 @@
                 <version>${maven.surfire.plugin}</version>
                 <configuration>
                     <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <version>${maven.install.plugin}</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven.deploy.plugin}</version>
+                <configuration>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
         </plugins>
