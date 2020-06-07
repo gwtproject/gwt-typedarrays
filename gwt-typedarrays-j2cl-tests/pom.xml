@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.gwtproject.typedarrays</groupId>
         <artifactId>gwt-typedarrays-parent</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${revision}</version>
     </parent>
     <artifactId>gwt-typedarrays-j2cl-tests</artifactId>
 
@@ -53,7 +53,7 @@
         <maven.findbugs.plugin>3.0.5</maven.findbugs.plugin>
         <maven.install.plugin>3.0.0-M1</maven.install.plugin>
         <maven.jar.plugin>3.1.2</maven.jar.plugin>
-        <maven.j2cl.plugin>0.13-SNAPSHOT</maven.j2cl.plugin>
+        <maven.j2cl.plugin>0.15-SNAPSHOT</maven.j2cl.plugin>
         <maven.licence.plugin>3.0</maven.licence.plugin>
         <maven.surfire.plugin>3.0.0-M1</maven.surfire.plugin>
 
@@ -104,6 +104,7 @@
                 <executions>
                     <execution>
                         <id>j2cl-test</id>
+                        <phase>test</phase>
                         <goals>
                             <goal>test</goal>
                         </goals>

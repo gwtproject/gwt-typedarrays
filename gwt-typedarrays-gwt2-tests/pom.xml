@@ -6,10 +6,9 @@
   <parent>
     <groupId>org.gwtproject.typedarrays</groupId>
     <artifactId>gwt-typedarrays-parent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
   </parent>
   <artifactId>gwt-typedarrays-gwt2-tests</artifactId>
-  <packaging>gwt-lib</packaging>
 
   <name>GWT Types Arrays GWT 2 Tests</name>
   <description>Test cases for the GWT 2</description>
@@ -28,9 +27,9 @@
     <vertispan.j2cl.repo.url>https://repo.vertispan.com/j2cl/</vertispan.j2cl.repo.url>
     <google.snapshot.repo.url>https://oss.sonatype.org/content/repositories/google-snapshots/</google.snapshot.repo.url>
 
-    <elemental2.version>1.0.0-RC1</elemental2.version>
+    <elemental2.version>1.0.0</elemental2.version>
     <gwt-event.version>HEAD-SNAPSHOT</gwt-event.version>
-    <gwt.version>2.8.2</gwt.version>
+    <gwt.version>2.9.0</gwt.version>
     <junit.version>4.12</junit.version>
 
     <!--
@@ -117,27 +116,31 @@
         <groupId>net.ltgt.gwt.maven</groupId>
         <artifactId>gwt-maven-plugin</artifactId>
         <version>${maven.gwt.plugin}</version>
-        <extensions>true</extensions>
-        <configuration>
-          <!-- note that this does nothing when only running tests -->
-          <moduleName>org.gwtproject.typedarrays.TypedArraysTest</moduleName>
-          <!--
-          Because we expressly disable asserts in tests to avoid a compiler bug, we also must run surefire manually
-          on the JRE tests
-           -->
-          <includes>
-            <include>**/TypedArraysSuite.java</include>
-          </includes>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <configuration>
+              <!--
+              Because we expressly disable asserts in tests to avoid a compiler bug, we also must run surefire manually
+              on the JRE tests
+               -->
+              <includes>
+                <include>**/TypedArraysSuite.java</include>
+              </includes>
 
-          <!-- disable JVM asserts, but enable JS asserts for tests -->
-          <enableAssertions>false</enableAssertions>
-          <testArgs>
-            <testArg>-checkAssertions</testArg>
-            <testArg>-runStyle</testArg>
-            <testArg>Manual:1</testArg>
-          </testArgs>
-          <skipTests>${disable.gwt2.tests}</skipTests>
-        </configuration>
+              <!-- disable JVM asserts, but enable JS asserts for tests -->
+              <enableAssertions>false</enableAssertions>
+              <testArgs>
+                <testArg>-checkAssertions</testArg>
+                <testArg>-runStyle</testArg>
+                <testArg>Manual:1</testArg>
+              </testArgs>
+              <skipTests>${disable.gwt2.tests}</skipTests>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
 
       <plugin>
