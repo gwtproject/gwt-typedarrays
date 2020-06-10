@@ -4,7 +4,7 @@
 
 A future-proof port of the `com.google.gwt.typedarrays.TypedArrays` GWT module, with no dependency on `gwt-user` (besides the Java Runtime Emulation), to prepare for GWT 3 / J2Cl.
 
-##  Migrating from `com.google.gwt.typedarays.TypesArrays`
+##  Migrating from `com.google.gwt.typedarrays.TypesArrays`
 
 1. Add the dependency to your build.
 
@@ -14,7 +14,7 @@ A future-proof port of the `com.google.gwt.typedarrays.TypedArrays` GWT module, 
    <dependency>
        <groupId>org.gwtproject.typedarrays</groupId>
        <artifactId>gwt-typedarrays</artifactId>
-       <version>1.0-SNAPSHOT</version>
+       <version>HEAD-SNAPSHOT</version>
    </dependency>
    ```
 
@@ -33,18 +33,16 @@ A future-proof port of the `com.google.gwt.typedarrays.TypedArrays` GWT module, 
 3. Change the `import`s in your Java source files:
 
    ```java
-   import org.gwtproject.typedarrays.*;
+   import org.gwtproject.typedarrays.client.ArrayBufferNative;
    ```
 
 ## Instructions
 
 To build gwt-typedarrays:
 
-* run `mvn clean install`
+* run `mvn clean verify`
 
 on the parent directory. This will build the artifact and run tests against the JVM, J2CL, and GWT2.
-
-**Note: To build the module you need Maven 3.6.3 or newer**
 
 ## System Requirements
 
