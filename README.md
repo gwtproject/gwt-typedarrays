@@ -46,9 +46,9 @@ on the parent directory. This will build the artifact and run tests against the 
 
 ## System Requirements
 
-**GWT TypedArrays requires GWT 2.9.0 or newer!**
+**GWT Typed Arrays requires GWT 2.9.0 or newer!**
 
 
 ## Dependencies
 
-GWT TypedArrays does not depend on any other module.
+GWT Typed Arrays does not depend on any other module.
