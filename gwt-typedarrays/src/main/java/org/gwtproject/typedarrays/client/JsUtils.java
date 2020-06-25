@@ -177,6 +177,7 @@ public class JsUtils {
 
     native void set(JsArray<Double> array, int offset);
   }
+
   @JsType(isNative = true, name = "Uint8ClampedArray", namespace = JsPackage.GLOBAL)
   private static class Uint8ClampedArrayN {
     Uint8ClampedArrayN(JsArray<Double> array) {}
@@ -255,7 +256,8 @@ public class JsUtils {
   }
 
   public static void set(Uint8ClampedArray dest, JsArrayInteger array, int offset) {
-    Js.<Uint8ClampedArrayN>uncheckedCast(dest).set(Js.<JsArray<Double>>uncheckedCast(array), offset);
+    Js.<Uint8ClampedArrayN>uncheckedCast(dest)
+        .set(Js.<JsArray<Double>>uncheckedCast(array), offset);
   }
 
   /**

@@ -18,7 +18,6 @@ package org.gwtproject.typedarrays.client;
 import elemental2.core.JsArray;
 import jsinterop.annotations.JsPackage;
 import jsinterop.annotations.JsType;
-import org.gwtproject.core.client.JavaScriptObject;
 import org.gwtproject.typedarrays.shared.ArrayBuffer;
 import org.gwtproject.typedarrays.shared.Uint8ClampedArray;
 
