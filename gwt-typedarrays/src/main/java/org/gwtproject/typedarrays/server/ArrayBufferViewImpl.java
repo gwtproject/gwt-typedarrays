@@ -35,9 +35,9 @@ public abstract class ArrayBufferViewImpl implements ArrayBufferView {
   protected final int byteOffset;
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param byteLength
+   * @param buffer the buffer to use as storage backing this view
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param byteLength the number of elements in the byte array
    */
   public ArrayBufferViewImpl(ArrayBuffer buffer, int byteOffset, int byteLength) {
     if (!(buffer instanceof ArrayBufferImpl)) {
@@ -68,7 +68,7 @@ public abstract class ArrayBufferViewImpl implements ArrayBufferView {
    * the specified element.
    *
    * @param index an element index
-   * @param bytesPerElement
+   * @param bytesPerElement the size of each element in bytes
    * @return the byte index of the start of this element
    */
   protected int checkRange(int index, int bytesPerElement) {

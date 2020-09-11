@@ -25,7 +25,8 @@ import jsinterop.base.JsArrayLike;
 /**
  * A view representing an {@link ArrayBuffer} as 32-bit floats.
  *
- * <p>{@link "http://www.khronos.org/registry/typedarray/specs/latest/#7"}
+ * @see <a
+ *     href="http://www.khronos.org/registry/typedarray/specs/latest/#7">http://www.khronos.org/registry/typedarray/specs/latest/#7</a>
  */
 @JsType(isNative = true, name = "Float32Array", namespace = JsPackage.GLOBAL)
 public interface Float32Array extends ArrayBufferView {
@@ -43,7 +44,7 @@ public interface Float32Array extends ArrayBufferView {
   /**
    * Retrieve one element of this view.
    *
-   * @param index
+   * @param index the index within the array to read from
    * @return the requested element
    */
   @JsOverlay
@@ -53,8 +54,8 @@ public interface Float32Array extends ArrayBufferView {
   /**
    * Set one element in this view.
    *
-   * @param index
-   * @param value
+   * @param index the index within the array to write to
+   * @param value the value to write
    */
   @JsOverlay
   default void set(int index, float value) {
@@ -63,30 +64,30 @@ public interface Float32Array extends ArrayBufferView {
   /**
    * Set multiple elements in this view from another view, storing starting at 0.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   void set(Float32Array array);
 
   /**
    * Set multiple elements in this view from another view, storing starting at the requested offset.
    *
-   * @param array
-   * @param offset
+   * @param array the values to write to this array
+   * @param offset the offset within this array to start writing
    */
   void set(Float32Array array, int offset);
 
   /**
    * Set multiple elements in this view from an array, storing starting at 0.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   void set(float[] array);
 
   /**
    * Set multiple elements in this view from an array, storing starting at the requested offset.
    *
-   * @param array
-   * @param offset
+   * @param array the values to write to this array
+   * @param offset the offset within this array to start writing
    */
   void set(float[] array, int offset);
 

@@ -24,9 +24,9 @@ import org.gwtproject.typedarrays.shared.DataView;
 public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param byteLength
+   * @param buffer the buffer to use as storage backing this view
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param byteLength the number of elements in the byte array
    */
   public DataViewImpl(ArrayBuffer buffer, int byteOffset, int byteLength) {
     super(buffer, byteOffset, byteLength);

@@ -32,68 +32,54 @@ import org.gwtproject.typedarrays.shared.Uint8ClampedArray;
 public class Uint8ClampedArrayNative extends Uint8ArrayNative implements Uint8ClampedArray {
 
   /**
-   * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
-   * supports clamped arrays -- otherwise {@link Uint8ClampedArrayNativeEmul} should be used
-   * instead.
+   * Create a {@link Uint8ClampedArray} instance.
    *
-   * @param buffer
+   * @param buffer a buffer to that this array should use for storage
    */
   public Uint8ClampedArrayNative(ArrayBuffer buffer) {}
 
   /**
-   * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
-   * supports clamped arrays -- otherwise {@link Uint8ClampedArrayNativeEmul} should be used
-   * instead.
+   * Create a {@link Uint8ClampedArray} instance.
    *
-   * @param buffer
-   * @param byteOffset
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    */
   public Uint8ClampedArrayNative(ArrayBuffer buffer, int byteOffset) {}
 
   /**
-   * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
-   * supports clamped arrays -- otherwise {@link Uint8ClampedArrayNativeEmul} should be used
-   * instead.
+   * Create a {@link Uint8ClampedArray} instance.
    *
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    */
   public Uint8ClampedArrayNative(ArrayBuffer buffer, int byteOffset, int length) {}
 
   /**
-   * Create a {@link org.gwtproject.typedarrays.shared.Uint8Array} instance from an array. Must only
-   * be called if the environment natively supports clamped arrays -- otherwise {@link
-   * Uint8ClampedArrayNativeEmul} should be used instead.
+   * Create a {@link org.gwtproject.typedarrays.shared.Uint8Array} instance from an array.
    *
    * @param array an array of initial values
    */
   public Uint8ClampedArrayNative(int[] array) {}
 
   /**
-   * Create a {@link Uint8ClampedArray} instance from a JavaScript array-like object. Must only be
-   * called if the environment natively supports clamped arrays -- otherwise {@link
-   * Uint8ClampedArrayNativeEmul} should be used instead.
+   * Create a {@link Uint8ClampedArray} instance from a JavaScript array-like object.
    *
    * @param array a JS array or array-like object
    */
   public Uint8ClampedArrayNative(JsArray<Double> array) {}
 
   /**
-   * Create a {@link org.gwtproject.typedarrays.shared.Uint8Array} instance from an array. Must only
-   * be called if the environment natively supports clamped arrays -- otherwise {@link
-   * Uint8ClampedArrayNativeEmul} should be used instead.
+   * Create a {@link org.gwtproject.typedarrays.shared.Uint8Array} instance from an array.
    *
    * @param array an array of initial values
    */
   public Uint8ClampedArrayNative(short[] array) {}
 
   /**
-   * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
-   * supports clamped arrays -- otherwise {@link Uint8ClampedArrayNativeEmul} should be used
-   * instead.
+   * Create a {@link Uint8ClampedArray} instance.
    *
-   * @param length
+   * @param length the number of items that the created array should contain
    */
   public Uint8ClampedArrayNative(int length) {}
 

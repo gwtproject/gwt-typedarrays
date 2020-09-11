@@ -26,7 +26,8 @@ import jsinterop.base.JsArrayLike;
  * A view representing an {@link ArrayBuffer} as 32-bit unsigned integers. Storing out-of-range
  * values are mapped to valid values by taking the bottom 32 bits of the value.
  *
- * <p>{@link "http://www.khronos.org/registry/typedarray/specs/latest/#7"}
+ * @see <a
+ *     href="http://www.khronos.org/registry/typedarray/specs/latest/#7">http://www.khronos.org/registry/typedarray/specs/latest/#7</a>
  */
 @JsType(isNative = true, name = "Uint32Array", namespace = JsPackage.GLOBAL)
 public interface Uint32Array extends ArrayBufferView {
@@ -44,7 +45,7 @@ public interface Uint32Array extends ArrayBufferView {
   /**
    * Retrieve one element of this view.
    *
-   * @param index
+   * @param index the index within the array to read from
    * @return the requested element
    */
   @JsOverlay
@@ -54,7 +55,7 @@ public interface Uint32Array extends ArrayBufferView {
   /**
    * Retrieve one element of this view.
    *
-   * @param index
+   * @param index the index within the array to read from
    * @return the requested element as a double
    */
   @JsOverlay
@@ -65,8 +66,8 @@ public interface Uint32Array extends ArrayBufferView {
   /**
    * Set one element in this view.
    *
-   * @param index
-   * @param value
+   * @param index the index within the array to write to
+   * @param value the value to write
    */
   @JsOverlay
   default void set(int index, double value) {
@@ -75,8 +76,8 @@ public interface Uint32Array extends ArrayBufferView {
   /**
    * Set one element in this view.
    *
-   * @param index
-   * @param value
+   * @param index the index within the array to write to
+   * @param value the value to write
    */
   @JsOverlay
   default void set(int index, long value) {
@@ -85,21 +86,21 @@ public interface Uint32Array extends ArrayBufferView {
   /**
    * Set multiple elements in this view from another view, storing starting at 0.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   void set(Uint32Array array);
 
   /**
    * Set multiple elements in this view from another view, storing starting at the requested offset.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   void set(Uint32Array array, int offset);
 
   /**
    * Set multiple elements in this view from an array, storing starting at 0.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   @JsOverlay
   default void set(long[] array) {
@@ -109,7 +110,7 @@ public interface Uint32Array extends ArrayBufferView {
   /**
    * Set multiple elements in this view from an array, storing starting at the requested offset.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   @JsOverlay
   default void set(long[] array, int offset) {
@@ -123,14 +124,14 @@ public interface Uint32Array extends ArrayBufferView {
   /**
    * Set multiple elements in this view from an array, storing starting at 0.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   void set(double[] array);
 
   /**
    * Set multiple elements in this view from an array, storing starting at the requested offset.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   void set(double[] array, int offset);
 

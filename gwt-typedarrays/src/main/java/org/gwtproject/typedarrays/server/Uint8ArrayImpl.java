@@ -24,9 +24,9 @@ import org.gwtproject.typedarrays.shared.Uint8Array;
 public class Uint8ArrayImpl extends ArrayBufferViewImpl implements Uint8Array {
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer the buffer to use as storage backing this view
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the byte array
    */
   public Uint8ArrayImpl(ArrayBuffer buffer, int byteOffset, int length) {
     super(buffer, byteOffset, length);

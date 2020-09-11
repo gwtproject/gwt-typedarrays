@@ -22,7 +22,8 @@ import jsinterop.annotations.JsType;
 /**
  * A buffer containing an arbitrary sequence of bytes.
  *
- * <p>{@link "http://www.khronos.org/registry/typedarray/specs/latest/#5"}
+ * @see <a
+ *     href="http://www.khronos.org/registry/typedarray/specs/latest/#5">http://www.khronos.org/registry/typedarray/specs/latest/#5</a>
  */
 @JsType(isNative = true, name = "ArrayBuffer", namespace = JsPackage.GLOBAL)
 public interface ArrayBuffer {

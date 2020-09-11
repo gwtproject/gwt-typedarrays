@@ -46,7 +46,7 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
   /**
    * Create a {@link Uint8Array} instance.
    *
-   * @param buffer
+   * @param buffer a buffer to that this array should use for storage
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
@@ -57,16 +57,15 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
   /**
    * Create a {@link Uint8Array} instance.
    *
-   * @param buffer
-   * @return a {@link Uint8Array} instance
+   * @param buffer a buffer to that this array should use for storage
    */
   public Uint8ArrayNative(ArrayBuffer buffer) {}
 
   /**
    * Create a {@link Uint8Array} instance.
    *
-   * @param buffer
-   * @param byteOffset
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
@@ -77,18 +76,17 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
   /**
    * Create a {@link Uint8Array} instance.
    *
-   * @param buffer
-   * @param byteOffset
-   * @return a {@link Uint8Array} instance
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    */
   public Uint8ArrayNative(ArrayBuffer buffer, int byteOffset) {}
 
   /**
    * Create a {@link Uint8Array} instance.
    *
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
@@ -99,17 +97,16 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
   /**
    * Create a {@link Uint8Array} instance.
    *
-   * @param buffer
-   * @param byteOffset
-   * @param length
-   * @return a {@link Uint8Array} instance
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    */
   public Uint8ArrayNative(ArrayBuffer buffer, int byteOffset, int length) {}
 
   /**
    * Create a {@link Uint8Array} instance.
    *
-   * @param length
+   * @param length the number of items that the created array should contain
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
@@ -120,8 +117,7 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
   /**
    * Create a {@link Uint8Array} instance.
    *
-   * @param length
-   * @return a {@link Uint8Array} instance
+   * @param length the number of items that the created array should contain
    */
   public Uint8ArrayNative(int length) {}
 
@@ -140,7 +136,6 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
    * Create a {@link Uint8Array} instance from an array.
    *
    * @param array an array of initial values
-   * @return a {@link Uint8Array} instance
    */
   public Uint8ArrayNative(int[] array) {}
 
@@ -159,7 +154,6 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
    * Create a {@link Uint8Array} instance from a JavaScript array-like object.
    *
    * @param array a JS array or array-like object
-   * @return a {@link Uint8Array} instance
    */
   public Uint8ArrayNative(JsArray<Double> array) {}
 
@@ -178,7 +172,6 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
    * Create a {@link Uint8Array} instance from an array.
    *
    * @param array an array of initial values
-   * @return a {@link Uint8Array} instance
    */
   public Uint8ArrayNative(short[] array) {}
 
@@ -186,7 +179,7 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
    * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
    * supports clamped arrays.
    *
-   * @param buffer
+   * @param buffer a buffer to that this array should use for storage
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
@@ -198,8 +191,8 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
    * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
    * supports clamped arrays.
    *
-   * @param buffer
-   * @param byteOffset
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
@@ -211,9 +204,9 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
    * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
    * supports clamped arrays.
    *
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay
@@ -225,7 +218,7 @@ public class Uint8ArrayNative extends ArrayBufferViewNative implements Uint8Clam
    * Create a {@link Uint8ClampedArray} instance. Must only be called if the environment natively
    * supports clamped arrays.
    *
-   * @param length
+   * @param length the number of items that the created array should contain
    * @return a {@link Uint8Array} instance
    */
   @JsOverlay

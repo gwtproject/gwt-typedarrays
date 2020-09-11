@@ -27,22 +27,19 @@ import org.gwtproject.typedarrays.shared.Float32Array;
 public final class Float32ArrayNative extends ArrayBufferViewNative implements Float32Array {
 
   /**
-   * @param buffer
+   * @param buffer a buffer to that this array should use for storage
    * @return a {@link Float32Array} instance
    */
   @JsOverlay
   public static Float32ArrayNative create(ArrayBuffer buffer) {
     return new Float32ArrayNative(buffer);
   };
-  /**
-   * @param buffer
-   * @return a {@link Float32Array} instance
-   */
+  /** @param buffer a buffer to that this array should use for storage */
   public Float32ArrayNative(ArrayBuffer buffer) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    * @return a {@link Float32Array} instance
    */
   @JsOverlay
@@ -50,16 +47,15 @@ public final class Float32ArrayNative extends ArrayBufferViewNative implements F
     return new Float32ArrayNative(buffer, byteOffset);
   };
   /**
-   * @param buffer
-   * @param byteOffset
-   * @return a {@link Float32Array} instance
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    */
   public Float32ArrayNative(ArrayBuffer buffer, int byteOffset) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    * @return a {@link Float32Array} instance
    */
   @JsOverlay
@@ -67,9 +63,9 @@ public final class Float32ArrayNative extends ArrayBufferViewNative implements F
     return new Float32ArrayNative(buffer, byteOffset, length);
   }
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    */
   public Float32ArrayNative(ArrayBuffer buffer, int byteOffset, int length) {}
 
@@ -92,14 +88,14 @@ public final class Float32ArrayNative extends ArrayBufferViewNative implements F
   public Float32ArrayNative(float[] array) {}
 
   /**
-   * @param length
+   * @param length the number of items that the created array should contain
    * @return a {@link Float32Array} instance
    */
   @JsOverlay
   public static Float32ArrayNative create(int length) {
     return new Float32ArrayNative(length);
   }
-  /** @param length */
+  /** @param length the number of items that the created array should contain */
   public Float32ArrayNative(int length) {}
 
   //  @Override

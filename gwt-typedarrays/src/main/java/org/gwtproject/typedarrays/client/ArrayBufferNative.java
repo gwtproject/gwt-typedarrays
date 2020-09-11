@@ -26,17 +26,15 @@ import org.gwtproject.typedarrays.shared.ArrayBuffer;
 public final class ArrayBufferNative implements ArrayBuffer {
 
   /**
-   * @param length
+   * @param length the size in bytes of the new array buffer instance
    * @return an {@link ArrayBuffer} instance
    */
   @JsOverlay
   public static ArrayBufferNative create(int length) {
     return new ArrayBufferNative(length);
   }
-  /**
-   * @param length
-   * @return an {@link ArrayBuffer} instance
-   */
+
+  /** @param length the size in bytes of the new array buffer instance */
   public ArrayBufferNative(int length) {}
 
   @Override

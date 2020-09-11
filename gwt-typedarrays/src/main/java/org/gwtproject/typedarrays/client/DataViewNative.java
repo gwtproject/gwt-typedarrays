@@ -27,22 +27,19 @@ import org.gwtproject.typedarrays.shared.DataView;
 public final class DataViewNative extends ArrayBufferViewNative implements DataView {
 
   /**
-   * @param buffer
+   * @param buffer the buffer to use as storage backing this view
    * @return a {@link DataView} instance
    */
   @JsOverlay
   public static DataView create(ArrayBuffer buffer) {
     return new DataViewNative(buffer);
   }
-  /**
-   * @param buffer
-   * @return a {@link DataView} instance
-   */
+  /** @param buffer the buffer to use as storage backing this view */
   public DataViewNative(ArrayBuffer buffer) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
+   * @param buffer the buffer to use as storage backing this view
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    * @return a {@link DataView} instance
    */
   @JsOverlay
@@ -50,16 +47,15 @@ public final class DataViewNative extends ArrayBufferViewNative implements DataV
     return new DataViewNative(buffer, byteOffset);
   }
   /**
-   * @param buffer
-   * @param byteOffset
-   * @return a {@link DataView} instance
+   * @param buffer the buffer to use as storage backing this view
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    */
   public DataViewNative(ArrayBuffer buffer, int byteOffset) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param byteLength
+   * @param buffer the buffer to use as storage backing this view
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param byteLength the number of elements in the byte array
    * @return a {@link DataView} instance
    */
   @JsOverlay
@@ -67,10 +63,9 @@ public final class DataViewNative extends ArrayBufferViewNative implements DataV
     return new DataViewNative(buffer, byteOffset, byteLength);
   }
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param byteLength
-   * @return a {@link DataView} instance
+   * @param buffer the buffer to use as storage backing this view
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param byteLength the number of elements in the byte array
    */
   public DataViewNative(ArrayBuffer buffer, int byteOffset, int byteLength) {}
 

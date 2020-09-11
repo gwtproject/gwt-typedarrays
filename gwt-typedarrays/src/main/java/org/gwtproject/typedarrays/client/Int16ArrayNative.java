@@ -27,7 +27,7 @@ import org.gwtproject.typedarrays.shared.Int16Array;
 public final class Int16ArrayNative extends ArrayBufferViewNative implements Int16Array {
 
   /**
-   * @param buffer
+   * @param buffer a buffer to that this array should use for storage
    * @return a {@link Int16Array} instance
    */
   @JsOverlay
@@ -35,15 +35,12 @@ public final class Int16ArrayNative extends ArrayBufferViewNative implements Int
     return new Int16ArrayNative(buffer);
   }
 
-  /**
-   * @param buffer
-   * @return a {@link Int16Array} instance
-   */
+  /** @param buffer a buffer to that this array should use for storage */
   public Int16ArrayNative(ArrayBuffer buffer) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    * @return a {@link Int16Array} instance
    */
   @JsOverlay
@@ -52,16 +49,15 @@ public final class Int16ArrayNative extends ArrayBufferViewNative implements Int
   }
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @return a {@link Int16Array} instance
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    */
   public Int16ArrayNative(ArrayBuffer buffer, int byteOffset) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    * @return a {@link Int16Array} instance
    */
   @JsOverlay
@@ -69,15 +65,14 @@ public final class Int16ArrayNative extends ArrayBufferViewNative implements Int
     return new Int16ArrayNative(buffer, byteOffset, length);
   }
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
-   * @return a {@link Int16Array} instance
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    */
   public Int16ArrayNative(ArrayBuffer buffer, int byteOffset, int length) {}
 
   /**
-   * @param array
+   * @param array an array of initial values
    * @return a {@link Int16Array} instance
    */
   @JsOverlay
@@ -85,11 +80,11 @@ public final class Int16ArrayNative extends ArrayBufferViewNative implements Int
     return new Int16ArrayNative(array);
   }
 
-  /** @param array */
+  /** @param array an array of initial values */
   public Int16ArrayNative(short[] array) {}
 
   /**
-   * @param length
+   * @param length the number of items that the created array should contain
    * @return a {@link Int16Array} instance
    */
   @JsOverlay
@@ -97,10 +92,7 @@ public final class Int16ArrayNative extends ArrayBufferViewNative implements Int
     return new Int16ArrayNative(length);
   }
 
-  /**
-   * @param length
-   * @return a {@link Int16Array} instance
-   */
+  /** @param length the number of items that the created array should contain */
   public Int16ArrayNative(int length) {}
 
   //  @Override

@@ -22,7 +22,8 @@ import jsinterop.annotations.JsType;
  * A view representing an {@link ArrayBuffer} as 8-bit unsigned integers. Storing out-of-range
  * values are mapped to valid values by clamping to the range 0-255.
  *
- * <p>{@link "http://www.khronos.org/registry/typedarray/specs/latest/#7"}
+ * @see <a
+ *     href="http://www.khronos.org/registry/typedarray/specs/latest/#7">http://www.khronos.org/registry/typedarray/specs/latest/#7</a>
  */
 @JsType(isNative = true, name = "Uint8ClampedArray", namespace = JsPackage.GLOBAL)
 public interface Uint8ClampedArray extends Uint8Array {

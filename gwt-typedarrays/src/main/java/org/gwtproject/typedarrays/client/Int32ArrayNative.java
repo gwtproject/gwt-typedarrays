@@ -27,7 +27,7 @@ import org.gwtproject.typedarrays.shared.Int32Array;
 public final class Int32ArrayNative extends ArrayBufferViewNative implements Int32Array {
 
   /**
-   * @param buffer
+   * @param buffer a buffer to that this array should use for storage
    * @return a {@link Int32Array} instance
    */
   @JsOverlay
@@ -35,12 +35,12 @@ public final class Int32ArrayNative extends ArrayBufferViewNative implements Int
     return new Int32ArrayNative(buffer);
   }
 
-  /** @param buffer */
+  /** @param buffer a buffer to that this array should use for storage */
   public Int32ArrayNative(ArrayBuffer buffer) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    * @return a {@link Int32Array} instance
    */
   @JsOverlay
@@ -49,15 +49,15 @@ public final class Int32ArrayNative extends ArrayBufferViewNative implements Int
   }
 
   /**
-   * @param buffer
-   * @param byteOffset
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    */
   public Int32ArrayNative(ArrayBuffer buffer, int byteOffset) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    * @return a {@link Int32Array} instance
    */
   @JsOverlay
@@ -66,14 +66,14 @@ public final class Int32ArrayNative extends ArrayBufferViewNative implements Int
   }
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    */
   public Int32ArrayNative(ArrayBuffer buffer, int byteOffset, int length) {}
 
   /**
-   * @param array
+   * @param array an array of initial values
    * @return a {@link Int32Array} instance
    */
   @JsOverlay
@@ -81,11 +81,11 @@ public final class Int32ArrayNative extends ArrayBufferViewNative implements Int
     return new Int32ArrayNative(array);
   }
 
-  /** @param array */
+  /** @param array an array of initial values */
   public Int32ArrayNative(int[] array) {}
 
   /**
-   * @param length
+   * @param length the number of items that the created array should contain
    * @return a {@link Int32Array} instance
    */
   @JsOverlay
@@ -93,7 +93,7 @@ public final class Int32ArrayNative extends ArrayBufferViewNative implements Int
     return new Int32ArrayNative(length);
   }
 
-  /** @param length */
+  /** @param length the number of items that the created array should contain */
   public Int32ArrayNative(int length) {}
 
   //  @Override

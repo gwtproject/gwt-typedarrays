@@ -27,7 +27,7 @@ import org.gwtproject.typedarrays.shared.Int8Array;
 public final class Int8ArrayNative extends ArrayBufferViewNative implements Int8Array {
 
   /**
-   * @param buffer
+   * @param buffer a buffer to that this array should use for storage
    * @return a {@link Int8Array} instance
    */
   @JsOverlay
@@ -35,15 +35,12 @@ public final class Int8ArrayNative extends ArrayBufferViewNative implements Int8
     return new Int8ArrayNative(buffer);
   }
 
-  /**
-   * @param buffer
-   * @return a {@link Int8Array} instance
-   */
+  /** @param buffer a buffer to that this array should use for storage */
   public Int8ArrayNative(ArrayBuffer buffer) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    * @return a {@link Int8Array} instance
    */
   @JsOverlay
@@ -51,16 +48,15 @@ public final class Int8ArrayNative extends ArrayBufferViewNative implements Int8
     return new Int8ArrayNative(buffer, byteOffset);
   }
   /**
-   * @param buffer
-   * @param byteOffset
-   * @return a {@link Int8Array} instance
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    */
   public Int8ArrayNative(ArrayBuffer buffer, int byteOffset) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    * @return a {@link Int8Array} instance
    */
   @JsOverlay
@@ -69,27 +65,26 @@ public final class Int8ArrayNative extends ArrayBufferViewNative implements Int8
   }
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
-   * @return a {@link Int8Array} instance
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    */
   public Int8ArrayNative(ArrayBuffer buffer, int byteOffset, int length) {}
 
   /**
-   * @param array
-   * @return
+   * @param array an array of initial values
+   * @return an {@link Int8ArrayNative} instance
    */
   @JsOverlay
   public static Int8ArrayNative create(byte[] array) {
     return new Int8ArrayNative(array);
   }
 
-  /** @param array */
+  /** @param array an array of initial values */
   public Int8ArrayNative(byte[] array) {}
 
   /**
-   * @param length
+   * @param length the number of items that the created array should contain
    * @return a {@link Int8Array} instance
    */
   @JsOverlay
@@ -97,10 +92,7 @@ public final class Int8ArrayNative extends ArrayBufferViewNative implements Int8
     return new Int8ArrayNative(length);
   }
 
-  /**
-   * @param length
-   * @return a {@link Int8Array} instance
-   */
+  /** @param length the number of items that the created array should contain */
   public Int8ArrayNative(int length) {}
 
   //  @Override
