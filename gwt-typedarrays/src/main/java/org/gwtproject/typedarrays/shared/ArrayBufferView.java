@@ -22,7 +22,8 @@ import jsinterop.annotations.JsType;
 /**
  * Common information across all types of views of {@link ArrayBuffer}s.
  *
- * <p>{@link "http://www.khronos.org/registry/typedarray/specs/latest/#6"}
+ * @see <a
+ *     href="http://www.khronos.org/registry/typedarray/specs/latest/#6">http://www.khronos.org/registry/typedarray/specs/latest/#6</a>
  */
 @JsType(isNative = true, name = "ArrayBufferView", namespace = JsPackage.GLOBAL)
 public interface ArrayBufferView {

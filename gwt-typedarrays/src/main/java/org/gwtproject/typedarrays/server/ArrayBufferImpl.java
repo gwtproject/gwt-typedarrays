@@ -31,7 +31,7 @@ public class ArrayBufferImpl implements ArrayBuffer {
 
   private final ByteBuffer buf;
 
-  /** @param length */
+  /** @param length the size in bytes of the new array buffer instance */
   public ArrayBufferImpl(int length) {
     buf = ByteBuffer.allocate(length);
     // JS lets native byte order show through, which is typically little-endian

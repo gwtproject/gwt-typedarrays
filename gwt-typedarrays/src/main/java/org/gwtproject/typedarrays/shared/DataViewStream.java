@@ -98,7 +98,7 @@ public class DataViewStream {
   }
 
   /**
-   * @param littleEndian
+   * @param littleEndian true if the double should be read as little endian, false otherwise
    * @return unsigned 32-bit int as a double
    */
   public double getUint32AsDouble(boolean littleEndian) {
@@ -173,14 +173,15 @@ public class DataViewStream {
     offset += 4;
   }
 
-  /** @param value */
+  /** @param value a double value to write as an unsigned 32 bit integer. */
   public void putUint32FromDouble(double value) {
     putUint32FromDouble(value, false);
   }
 
   /**
-   * @param value
-   * @param littleEndian
+   * @param value a double value to write as an unsigned 32 bit integer
+   * @param littleEndian true if the bytes for the value should be little endian ordered, false
+   *     otherwise
    */
   public void putUint32FromDouble(double value, boolean littleEndian) {
     dataView.setUint32FromDouble(offset, value, littleEndian);

@@ -24,9 +24,9 @@ import org.gwtproject.typedarrays.shared.Uint32Array;
 public class Uint32ArrayImpl extends ArrayBufferViewImpl implements Uint32Array {
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer the buffer to use as storage backing this view
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array
    */
   public Uint32ArrayImpl(ArrayBuffer buffer, int byteOffset, int length) {
     super(buffer, byteOffset, length * BYTES_PER_ELEMENT);

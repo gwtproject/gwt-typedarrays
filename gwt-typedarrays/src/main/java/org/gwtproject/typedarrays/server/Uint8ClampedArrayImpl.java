@@ -24,12 +24,12 @@ import org.gwtproject.typedarrays.shared.Uint8ClampedArray;
 public final class Uint8ClampedArrayImpl extends Uint8ArrayImpl implements Uint8ClampedArray {
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param byteLength
+   * @param buffer the buffer to use as storage backing this view
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the byte array
    */
-  public Uint8ClampedArrayImpl(ArrayBuffer buffer, int byteOffset, int byteLength) {
-    super(buffer, byteOffset, byteLength);
+  public Uint8ClampedArrayImpl(ArrayBuffer buffer, int byteOffset, int length) {
+    super(buffer, byteOffset, length);
   }
 
   @Override

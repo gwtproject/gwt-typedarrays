@@ -27,7 +27,7 @@ import org.gwtproject.typedarrays.shared.Uint32Array;
 public final class Uint32ArrayNative extends ArrayBufferViewNative implements Uint32Array {
 
   /**
-   * @param buffer
+   * @param buffer a buffer to that this array should use for storage
    * @return a {@link Uint32Array} instance
    */
   @JsOverlay
@@ -35,12 +35,12 @@ public final class Uint32ArrayNative extends ArrayBufferViewNative implements Ui
     return new Uint32ArrayNative(buffer);
   }
 
-  /** @param buffer */
+  /** @param buffer a buffer to that this array should use for storage */
   public Uint32ArrayNative(ArrayBuffer buffer) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    * @return a {@link Uint32Array} instance
    */
   @JsOverlay
@@ -49,15 +49,15 @@ public final class Uint32ArrayNative extends ArrayBufferViewNative implements Ui
   }
 
   /**
-   * @param buffer
-   * @param byteOffset
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
    */
   public Uint32ArrayNative(ArrayBuffer buffer, int byteOffset) {}
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    * @return a {@link Uint32Array} instance
    */
   @JsOverlay
@@ -66,9 +66,9 @@ public final class Uint32ArrayNative extends ArrayBufferViewNative implements Ui
   }
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer a buffer to that this array should use for storage
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array to reference
    */
   public Uint32ArrayNative(ArrayBuffer buffer, int byteOffset, int length) {}
 
@@ -91,7 +91,7 @@ public final class Uint32ArrayNative extends ArrayBufferViewNative implements Ui
   public Uint32ArrayNative(double[] array) {}
 
   /**
-   * @param length
+   * @param length the number of items that the created array should contain
    * @return a {@link Uint32Array} instance
    */
   @JsOverlay
@@ -99,10 +99,7 @@ public final class Uint32ArrayNative extends ArrayBufferViewNative implements Ui
     return new Uint32ArrayNative(length);
   }
 
-  /**
-   * @param length
-   * @return a {@link Uint32Array} instance
-   */
+  /** @param length the number of items that the created array should contain */
   public Uint32ArrayNative(int length) {}
 
   //  @Override

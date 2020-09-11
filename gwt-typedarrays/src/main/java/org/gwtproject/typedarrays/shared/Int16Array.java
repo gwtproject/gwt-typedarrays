@@ -26,7 +26,8 @@ import jsinterop.base.JsArrayLike;
  * A view representing an {@link ArrayBuffer} as 16-bit signed integers. Storing out-of-range values
  * are mapped to valid values by taking the bottom 16 bits of the value.
  *
- * <p>{@link "http://www.khronos.org/registry/typedarray/specs/latest/#7"}
+ * @see <a
+ *     href="http://www.khronos.org/registry/typedarray/specs/latest/#7">http://www.khronos.org/registry/typedarray/specs/latest/#7</a>
  */
 @JsType(isNative = true, name = "Int16Array", namespace = JsPackage.GLOBAL)
 public interface Int16Array extends ArrayBufferView {
@@ -44,7 +45,7 @@ public interface Int16Array extends ArrayBufferView {
   /**
    * Retrieve one element of this view.
    *
-   * @param index
+   * @param index the index within the array to read from
    * @return the requested element
    */
   @JsOverlay
@@ -54,8 +55,8 @@ public interface Int16Array extends ArrayBufferView {
   /**
    * Set one element in this view.
    *
-   * @param index
-   * @param value
+   * @param index the index within the array to write to
+   * @param value the value to write
    */
   @JsOverlay
   default void set(int index, int value) {
@@ -64,42 +65,44 @@ public interface Int16Array extends ArrayBufferView {
   /**
    * Set multiple elements in this view from another view, storing starting at 0.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   void set(Int16Array array);
 
   /**
    * Set multiple elements in this view from another view, storing starting at the requested offset.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   void set(Int16Array array, int offset);
 
   /**
    * Set multiple elements in this view from an array, storing starting at 0.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   void set(short[] array);
 
   /**
    * Set multiple elements in this view from an array, storing starting at the requested offset.
    *
-   * @param array
+   * @param array the values to write to this array
+   * @param offset the offset within this array to start writing
    */
   void set(short[] array, int offset);
 
   /**
    * Set multiple elements in this view from an array, storing starting at 0.
    *
-   * @param array
+   * @param array the values to write to this array
    */
   void set(int[] array);
 
   /**
    * Set multiple elements in this view from an array, storing starting at the requested offset.
    *
-   * @param array
+   * @param array the values to write to this array
+   * @param offset the offset within this array to start writing
    */
   void set(int[] array, int offset);
 

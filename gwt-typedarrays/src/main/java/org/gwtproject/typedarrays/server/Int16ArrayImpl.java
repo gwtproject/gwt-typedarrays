@@ -24,9 +24,9 @@ import org.gwtproject.typedarrays.shared.Int16Array;
 public final class Int16ArrayImpl extends ArrayBufferViewImpl implements Int16Array {
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer the buffer to use as storage backing this view
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array
    */
   public Int16ArrayImpl(ArrayBuffer buffer, int byteOffset, int length) {
     super(buffer, byteOffset, length * BYTES_PER_ELEMENT);

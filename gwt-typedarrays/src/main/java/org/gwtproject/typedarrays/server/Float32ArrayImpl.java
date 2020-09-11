@@ -24,9 +24,9 @@ import org.gwtproject.typedarrays.shared.Float32Array;
 public final class Float32ArrayImpl extends ArrayBufferViewImpl implements Float32Array {
 
   /**
-   * @param buffer
-   * @param byteOffset
-   * @param length
+   * @param buffer the buffer to use as storage backing this view
+   * @param byteOffset the offset in bytes to the first item to reference in the buffer
+   * @param length the number of elements in the array
    */
   public Float32ArrayImpl(ArrayBuffer buffer, int byteOffset, int length) {
     super(buffer, byteOffset, length * BYTES_PER_ELEMENT);
