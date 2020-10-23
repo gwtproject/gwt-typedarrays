@@ -20,6 +20,7 @@
 
     <gwt-event.version>1.0.0-RC1</gwt-event.version>
     <gwt.version>2.9.0</gwt.version>
+    <junit.version>4.13.1</junit.version>
 
     <!--
     Flag to disable gwt2 tests, so that CI can set this. At this time, the htmlunit build
