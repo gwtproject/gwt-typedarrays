@@ -64,7 +64,10 @@
         <maven.surfire.plugin>3.0.0-M1</maven.surfire.plugin>
 
         <elemental2.version>1.1.0</elemental2.version>
-        <junit.version>4.12</junit.version>
+        <gwt-core.version>1.0.0-RC1</gwt-core.version>
+        <gwt-event.version>1.0.0-RC1</gwt-event.version>
+        <gwt.version>2.9.0</gwt.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
 
     <build>
@@ -185,17 +188,4 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>oss.sonatype.org-snapshot</id>
-            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
 </project>
