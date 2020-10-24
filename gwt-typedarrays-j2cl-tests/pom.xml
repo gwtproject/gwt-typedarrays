@@ -48,7 +48,6 @@
 
         <!-- CI -->
         <vertispan.j2cl.repo.url>https://repo.vertispan.com/j2cl/</vertispan.j2cl.repo.url>
-        <google.snapshot.repo.url>https://oss.sonatype.org/content/repositories/google-snapshots/</google.snapshot.repo.url>
 
         <j2cl.version>0.8-SNAPSHOT</j2cl.version>
     </properties>
