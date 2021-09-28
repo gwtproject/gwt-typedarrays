@@ -29,7 +29,7 @@ public class ArrayBufferImpl implements ArrayBuffer {
 
   private final Object lock = new Object();
 
-  private final ByteBuffer buf;
+  protected final ByteBuffer buf;
 
   /** @param length the size in bytes of the new array buffer instance */
   public ArrayBufferImpl(int length) {

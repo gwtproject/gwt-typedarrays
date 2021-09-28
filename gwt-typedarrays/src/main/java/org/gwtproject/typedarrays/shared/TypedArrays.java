@@ -179,6 +179,8 @@ public class TypedArrays {
      * @return true if the current environment actually does support typed arrays
      */
     protected abstract boolean runtimeSupportCheck();
+
+    protected abstract TextDecoder createDecoder(String label);
   }
   // CHECKSTYLE_ON
 
@@ -662,6 +664,18 @@ public class TypedArrays {
    */
   public static Uint8ClampedArray createUint8ClampedArray(int length) {
     return Instance.impl.createUint8ClampedArray(length);
+  }
+
+  /**
+   * Creates a new instance of {@link TextDecoder}.
+   *
+   * @param label the "label" of the encoder, for example "utf-8". See <a
+   *     href="https://developer.mozilla.org/en-US/docs/Web/API/Encoding_API/Encodings">all
+   *     encodings</a>.
+   * @return a {@link TextDecoder} instance.
+   */
+  public static TextDecoder createTextDecoder(String label) {
+    return Instance.impl.createDecoder(label);
   }
 
   /**

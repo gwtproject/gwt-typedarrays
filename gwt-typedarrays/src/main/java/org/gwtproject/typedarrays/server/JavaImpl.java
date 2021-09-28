@@ -24,6 +24,7 @@ import org.gwtproject.typedarrays.shared.Float64Array;
 import org.gwtproject.typedarrays.shared.Int16Array;
 import org.gwtproject.typedarrays.shared.Int32Array;
 import org.gwtproject.typedarrays.shared.Int8Array;
+import org.gwtproject.typedarrays.shared.TextDecoder;
 import org.gwtproject.typedarrays.shared.TypedArrays;
 import org.gwtproject.typedarrays.shared.Uint16Array;
 import org.gwtproject.typedarrays.shared.Uint32Array;
@@ -363,6 +364,12 @@ public class JavaImpl extends NativeImpl {
     Uint8ClampedArray result = createUint8ClampedArray(array.length);
     result.set(array);
     return result;
+  }
+
+  @GwtIncompatible
+  @Override
+  protected TextDecoder createDecoder(String label) {
+    return new TextDecoderImpl(label);
   }
 
   @GwtIncompatible
