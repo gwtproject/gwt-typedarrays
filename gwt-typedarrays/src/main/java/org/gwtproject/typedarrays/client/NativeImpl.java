@@ -25,6 +25,7 @@ import org.gwtproject.typedarrays.shared.Float64Array;
 import org.gwtproject.typedarrays.shared.Int16Array;
 import org.gwtproject.typedarrays.shared.Int32Array;
 import org.gwtproject.typedarrays.shared.Int8Array;
+import org.gwtproject.typedarrays.shared.TextDecoder;
 import org.gwtproject.typedarrays.shared.TypedArrays;
 import org.gwtproject.typedarrays.shared.Uint16Array;
 import org.gwtproject.typedarrays.shared.Uint32Array;
@@ -344,5 +345,10 @@ public class NativeImpl extends TypedArrays.Impl {
   @Override
   protected boolean runtimeSupportCheck() {
     return Js.<JsPropertyMap<Object>>uncheckedCast(DomGlobal.window).has("ArrayBuffer");
+  }
+
+  @Override
+  protected TextDecoder createDecoder(String label) {
+    return new TextDecoderNative(label);
   }
 }

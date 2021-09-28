@@ -71,6 +71,17 @@ public class DataViewTest extends GWTTestCase {
     assertEquals(0x80042001, view.getInt32(0, true));
   }
 
+  public void testDecoder() {
+    Int8Array array = TypedArrays.createInt8Array(9);
+    array.set(new int[] {'A', 'L', 'E', 'X', 'A', 'N', 'D', 'E', 'R'});
+
+    TextDecoder textDecoder = TypedArrays.createTextDecoder("utf-8");
+    assertEquals("ALEXANDER", textDecoder.decode(array));
+
+    DataView view = TypedArrays.createDataView(array.buffer(), 1, 3);
+    assertEquals("LEX", textDecoder.decode(view));
+  }
+
   //  public void testFoo() {
   //    System.out.println((short)0x80);
   //    System.out.println((byte)((short)0x80));
