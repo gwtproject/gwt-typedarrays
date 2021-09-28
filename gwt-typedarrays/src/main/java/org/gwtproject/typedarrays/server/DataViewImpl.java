@@ -39,7 +39,7 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public float getFloat32(int byteOffset, boolean littleEndian) {
-    return arrayBuf.getFloat32(byteOffset, littleEndian);
+    return arrayBuf.getFloat32(this.byteOffset + byteOffset, littleEndian);
   }
 
   @Override
@@ -49,7 +49,7 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public double getFloat64(int byteOffset, boolean littleEndian) {
-    return arrayBuf.getFloat64(byteOffset, littleEndian);
+    return arrayBuf.getFloat64(this.byteOffset + byteOffset, littleEndian);
   }
 
   @Override
@@ -59,7 +59,7 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public short getInt16(int byteOffset, boolean littleEndian) {
-    return arrayBuf.getInt16(byteOffset, littleEndian);
+    return arrayBuf.getInt16(this.byteOffset + byteOffset, littleEndian);
   }
 
   @Override
@@ -69,12 +69,12 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public int getInt32(int byteOffset, boolean littleEndian) {
-    return arrayBuf.getInt32(byteOffset, littleEndian);
+    return arrayBuf.getInt32(this.byteOffset + byteOffset, littleEndian);
   }
 
   @Override
   public byte getInt8(int byteOffset) {
-    return arrayBuf.getInt8(byteOffset);
+    return arrayBuf.getInt8(this.byteOffset + byteOffset);
   }
 
   @Override
@@ -84,7 +84,7 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public int getUint16(int byteOffset, boolean littleEndian) {
-    int val = arrayBuf.getInt16(byteOffset, littleEndian);
+    int val = arrayBuf.getInt16(this.byteOffset + byteOffset, littleEndian);
     if (val < 0) {
       val += 0x10000;
     }
@@ -98,7 +98,7 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public long getUint32(int byteOffset, boolean littleEndian) {
-    long val = arrayBuf.getInt32(byteOffset, littleEndian);
+    long val = arrayBuf.getInt32(this.byteOffset + byteOffset, littleEndian);
     if (val < 0) {
       val += 0x100000000L;
     }
@@ -131,7 +131,7 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public void setFloat32(int byteOffset, float value, boolean littleEndian) {
-    arrayBuf.setFloat32(byteOffset, value, littleEndian);
+    arrayBuf.setFloat32(this.byteOffset + byteOffset, value, littleEndian);
   }
 
   @Override
@@ -141,7 +141,7 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public void setFloat64(int byteOffset, double value, boolean littleEndian) {
-    arrayBuf.setFloat64(byteOffset, value, littleEndian);
+    arrayBuf.setFloat64(this.byteOffset + byteOffset, value, littleEndian);
   }
 
   @Override
@@ -151,7 +151,7 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public void setInt16(int byteOffset, int value, boolean littleEndian) {
-    arrayBuf.setInt16(byteOffset, (short) (value & 0xFFFF), littleEndian);
+    arrayBuf.setInt16(this.byteOffset + byteOffset, (short) (value & 0xFFFF), littleEndian);
   }
 
   @Override
@@ -161,12 +161,12 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public void setInt32(int byteOffset, int value, boolean littleEndian) {
-    arrayBuf.setInt32(byteOffset, value, littleEndian);
+    arrayBuf.setInt32(this.byteOffset + byteOffset, value, littleEndian);
   }
 
   @Override
   public void setInt8(int byteOffset, int value) {
-    arrayBuf.setInt8(byteOffset, (byte) (value & 255));
+    arrayBuf.setInt8(this.byteOffset + byteOffset, (byte) (value & 255));
   }
 
   @Override
@@ -176,7 +176,7 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public void setUint16(int byteOffset, int value, boolean littleEndian) {
-    arrayBuf.setInt16(byteOffset, (short) (value & 0xFFFF), littleEndian);
+    arrayBuf.setInt16(this.byteOffset + byteOffset, (short) (value & 0xFFFF), littleEndian);
   }
 
   @Override
@@ -186,7 +186,7 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public void setUint32(int byteOffset, long value, boolean littleEndian) {
-    arrayBuf.setInt32(byteOffset, (int) (value & 0xFFFFFFFF), littleEndian);
+    arrayBuf.setInt32(this.byteOffset + byteOffset, (int) (value & 0xFFFFFFFF), littleEndian);
   }
 
   @Override
@@ -201,6 +201,6 @@ public class DataViewImpl extends ArrayBufferViewImpl implements DataView {
 
   @Override
   public void setUint8(int byteOffset, int value) {
-    arrayBuf.setInt8(byteOffset, (byte) (value & 255));
+    arrayBuf.setInt8(this.byteOffset + byteOffset, (byte) (value & 255));
   }
 }
