@@ -71,6 +71,15 @@ public class DataViewTest extends GWTTestCase {
     assertEquals(0x80042001, view.getInt32(0, true));
   }
 
+  public void testWithOffset() {
+    Int8Array array = TypedArrays.createInt8Array(8);
+    array.set(new byte[] {0, 1, 2, 3, 4, 5, 6, 7}, 0);
+
+    DataView view = TypedArrays.createDataView(array.buffer(), 3, 4);
+    assertEquals((byte) 3, view.getInt8(0));
+    assertEquals((byte) 4, view.getInt8(1));
+  }
+
   //  public void testFoo() {
   //    System.out.println((short)0x80);
   //    System.out.println((byte)((short)0x80));

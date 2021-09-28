@@ -42,6 +42,7 @@ public class JavaImpl extends NativeImpl {
   @GwtIncompatible
   @Override
   public DataView createDataView(ArrayBuffer buffer, int byteOffset, int byteLength) {
+    ArrayBufferImpl impl = (ArrayBufferImpl) buffer;
     return new DataViewImpl(buffer, byteOffset, byteLength);
   }
 
